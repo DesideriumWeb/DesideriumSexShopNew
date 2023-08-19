@@ -30,7 +30,7 @@ const CartPage = () => {
         <div className="border-t pt-4">
           <p className="text-lg font-semibold text-pink-500">Total: ${calculateTotal()}</p>
           <button className="bg-pink-500 text-white py-2 px-4 rounded mt-4 hover:bg-pink-400 transition-colors duration-300">
-            Comprarr
+            Comprar
           </button>
         </div>
       </div>

@@ -1,15 +1,17 @@
+import "./globals.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'tailwindcss/tailwind.css'; 
+import { Inter } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Script from "next/script";
 
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Desiderium sex shop',
-  description: 'Tienda erotica Desiderium',
-}
+  title: "Desiderium sex shop",
+  description: "Tienda erotica Desiderium",
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -17,10 +19,18 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main>
           <Header />
-          {children}
+          <div className="w-full flex flex-col min-h-screen mt-16">{children}</div>
           <Footer />
         </main>
       </body>
+      <Script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></Script>
+      <Script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></Script>
     </html>
-  )
+  );
 }

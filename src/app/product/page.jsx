@@ -67,7 +67,7 @@ const Product = () => {
               <h2 className="text-lg font-semibold">{product.name}</h2>
               <p className="text-gray-600">${product.price}</p>
               <button className="bg-pink-500 text-white py-2 px-4 rounded mt-4 hover:bg-pink-400 transition-colors duration-300">
-                Agregar al Carrito
+                Agregar al Carritosw
               </button>
             </div>
           ))}

@@ -4,7 +4,6 @@ import 'tailwindcss/tailwind.css';
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,14 +22,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </main>
       </body>
-      <Script
-        type="module"
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      ></Script>
-      <Script
-        nomodule
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-      ></Script>
     </html>
   );
 }

@@ -31,7 +31,7 @@ const DetailsHome = () => {
               <img
                 src="https://cdn.pixabay.com/photo/2020/06/16/05/20/nude-5304236_1280.jpg" // Reemplaza con la URL de la imagen del producto
                 alt="Producto Destacado"
-                className="mx-auto max-w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
+                className="mx-auto max-w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 "
               />
               <h3 className="text-lg font-semibold mt-2">Nombre del Producto</h3>
               <p className="text-gray-300">Descripción del producto...</p>

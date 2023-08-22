@@ -6,10 +6,11 @@ import { saveUser } from "../../api/ApiUser";
 import { toast, Toaster } from "react-hot-toast";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { STRINGS } from "@/config/config";
 // import { useRouter } from 'next/router';
 
-const FormularioContact = () => {
-  const [iconPassword, seticonPassword] = useState(false);
+const FormularioRegistro = () => {
+  const [iconPassword, setIconPassword] = useState(false);
   const [iconConfirmarPassword, setIconConfirmarPassword] = useState(false);
   const [banderaUser, setBanderaUser] = useState(false);
   // const router = useRouter();
@@ -115,7 +116,7 @@ const FormularioContact = () => {
     <>
       <div className="mt-20">
         <h2 className="text-2xl font-bold text-center mb-4">
-          Formulario de registro
+          {STRINGS.TITLE_FORM_REGISTER}
         </h2>
         <Formik
           initialValues={() => handleInitialValue()}
@@ -125,14 +126,13 @@ const FormularioContact = () => {
         >
           {({ values, dirty, isValid }) => (
             <Form>
-              <form className="m-5 md:m-10 mt-20">
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                     <label
                       htmlFor="nombre"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Nombre
+                      {STRINGS.FIELD_NAME_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="nombre" />
@@ -150,7 +150,7 @@ const FormularioContact = () => {
                       htmlFor="apellido"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Apellidos
+                      {STRINGS.FIELD_LASTNAME_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="apellido" />
@@ -168,7 +168,7 @@ const FormularioContact = () => {
                       htmlFor="email"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Email
+                      {STRINGS.FIELD_EMAIL_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="email" />
@@ -186,7 +186,7 @@ const FormularioContact = () => {
                       htmlFor="telefono"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Telefono
+                      {STRINGS.FIELD_PHONE_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="telefono" />
@@ -204,7 +204,7 @@ const FormularioContact = () => {
                       htmlFor="ciudad"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Ciudad de residencia
+                      {STRINGS.FIELD_CITY_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="ciudad" />
@@ -222,7 +222,7 @@ const FormularioContact = () => {
                       htmlFor="departamento"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Departamento
+                      {STRINGS.FIELD_DEPARTMENT_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="departamento" />
@@ -240,7 +240,7 @@ const FormularioContact = () => {
                       htmlFor="direccion"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Dirección
+                      {STRINGS.FIELD_ADDRESS_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="direccion" />
@@ -258,13 +258,13 @@ const FormularioContact = () => {
                       htmlFor="fechaNacimiento"
                       className="text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Fecha de nacimiento
+                      {STRINGS.FIELD_DATE_BORN_FORM_REGISTER}
                     </label>
                     <label className="text-red-500">
                       <ErrorMessage name="fechaNacimiento" />
                     </label>
                     <Field
-                      type="text"
+                      type="date"
                       name="fechaNacimiento"
                       className="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="fechaNacimiento"
@@ -272,30 +272,46 @@ const FormularioContact = () => {
                     />
                   </div>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 relative">
                   <label
                     htmlFor="password"
                     className="text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Password
+                    {STRINGS.FIELD_PASSWORD_FORM_REGISTER}
                   </label>
                   <label className="text-red-500">
                     <ErrorMessage name="password" />
                   </label>
                   <Field
-                    type="text"
+                    type={iconPassword ? "text" : "password"}
                     name="password"
                     className="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="password"
                     required=""
                   />
+                  <span
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    onClick={() => setIconPassword(!iconPassword)}
+                  >
+                    {iconPassword ? (
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        className="text-gray-600 mt-9 "
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faEyeSlash}
+                        className="text-gray-600 mt-9"
+                      />
+                    )}
+                  </span>
                 </div>
                 <div className="mb-3 relative">
                   <label
                     htmlFor="confirmarPassword"
                     className="text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Confirmar password
+                    {STRINGS.FIELD_CONFIRM_PASSWORD_FORM_REGISTER}
                   </label>
                   <label className="text-red-500">
                     <ErrorMessage name="confirmarPassword" />
@@ -314,7 +330,10 @@ const FormularioContact = () => {
                     }
                   >
                     {iconConfirmarPassword ? (
-                      <FontAwesomeIcon icon={faEye} className="text-gray-600 mt-9 " />
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        className="text-gray-600 mt-9 "
+                      />
                     ) : (
                       <FontAwesomeIcon
                         icon={faEyeSlash}
@@ -323,16 +342,20 @@ const FormularioContact = () => {
                     )}
                   </span>
                 </div>
-
+                {!(dirty && isValid) ? (
+                  <div className="mt-4 bg-slate-500 text-white rounded">
+                    Completa todos los campos
+                  </div>
+                ) : null}
                 <div className="mt-6 flex justify-center">
                   <button
                     type="submit"
+                    disabled={dirty && isValid ? false : true}
                     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Submit
                   </button>
                 </div>
-              </form>
             </Form>
           )}
         </Formik>
@@ -342,4 +365,4 @@ const FormularioContact = () => {
   );
 };
 
-export default FormularioContact;
+export default FormularioRegistro;

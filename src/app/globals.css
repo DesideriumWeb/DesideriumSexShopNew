@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Tiro+Devanagari+Hindi&display=swap');
+
+.font-global{
+  font-family: 'Cinzel Decorative', sans-serif;
+}
+
+.font-sub-global  {
+  font-family: 'Tiro Devanagari Hindi', sans-serif;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -25,3 +35,15 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.custom-sombra-text {
+  color: rgb(213, 13, 213);
+  text-shadow: 2px 2px 5px rgb(152, 6, 169);
+  transition: 2s;
+}
+.custom-sombra-text:hover {
+  text-shadow: 10px 10px 10px rgb(152, 6, 169);
+  color: rgb(255, 252, 255);
+  transition: 2s;
+}
+

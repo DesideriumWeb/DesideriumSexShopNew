@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-black text-white py-12">
       <div className="container mx-auto flex flex-wrap justify-center px-16">
         <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center md:text-left">
-          <h3 className="text-xl font-semibold mb-4 text-pink-500">Navegación</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">Navegación</h3>
           <ul className="text-gray-400">
             <li className="mb-2"><a href="/">Inicio</a></li>
             <li className="mb-2"><a href="/productos">Productos</a></li>
@@ -16,13 +16,13 @@ const Footer = () => {
           </ul>
         </div>
         <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center">
-          <h3 className="text-xl font-semibold mb-4 text-pink-500">Contacto</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">Contacto</h3>
           <p className="text-gray-400">Dirección: Calle Falsa, 123</p>
           <p className="text-gray-400">Teléfono: (123) 456-7890</p>
           <p className="text-gray-400">Email: info@sexshop.com</p>
         </div>
         <div className="w-full md:w-1/3 text-center md:text-right">
-          <h3 className="text-xl font-semibold mb-4 text-pink-500">Síguenos</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">Síguenos</h3>
           <div className="flex justify-center md:justify-end space-x-4">
             <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
             <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-twitter"></i></a>

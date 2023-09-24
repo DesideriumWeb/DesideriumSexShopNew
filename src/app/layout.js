@@ -1,9 +1,12 @@
+
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "tailwindcss/tailwind.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsapIcon from "@/components/WhatsapIcon";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +31,7 @@ export default function RootLayout({ children }) {
             {children}
           </div>
           <Footer />
+         <WhatsapIcon/>
         </main>
       </body>
     </html>

@@ -9,21 +9,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import HeaderProducts from "../HeaderProducts/HeaderProduct";
+import ModalIzquierdaMenu from "../ModalIzquierdaMenu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const numPedidos = 5; // Cambia esto con la cantidad real de pedidos
   return (
     <>
       <div className="shadow-md w-full fixed top-0 left-0 z-20">
-        <div className="md:flex items-center justify-between bg-black text-white py-4 md:px-10 px-7">
+        <div className="md:flex items-center justify-between bg-black text-white py-2 sm:py-0 md:py-0 lg:py-0 md:px-10 px-7">
           <div
             className="font-bold text-2xl cursor-pointer flex flex-col items-center font-[Poppins] 
-      text-pink-500"
+            "
           >
-            <span>{STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM}</span>
-            <span>
-              {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM_1}&nbsp;&nbsp;
+            <span className="font-global custom-sombra-text">{STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM}</span>
+            <span  className="font-global custom-sombra-text text-lg">
+              {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM_1}&nbsp;
               {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM_2}
             </span>
           </div>
@@ -42,17 +44,32 @@ const Header = () => {
             }`}
           >
             {TITLE_MENU_NAVBAR.map((link) => (
-              <li key={link.name} className="md:ml-8 text-sm md:my-0 my-7">
-                <Link
-                  href={link.link}
-                  className="text-white hover:text-gray-400 duration-500"
-                >
-                  {link.name}
-                </Link>
+              <li
+                key={link.name}
+                className="md:ml-8 text-sm md:my-0 my-7"
+                onClick={() => setOpen(!open)}
+              >
+                {link.name === "PRODUCTOS" ? (
+                  <>
+                    <button
+                      className="text-white hover:text-gray-400 duration-500"
+                      onClick={() => setOpenModal(true)}
+                    >
+                      PRODUCTOS
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    href={link.link}
+                    className="text-white hover:text-gray-400 duration-500"
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
-            <Link href="/cart">
-              <div className="text-3xl relative  sm:ml-6 md:ml-6 lg:ml-6">
+            <Link onClick={() => setOpen(!open)} href="/cart">
+              <div className="text-3xl relative mt-4 sm:ml-6 md:ml-6 lg:ml-6">
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className="text-white hover:text-gray-400 cursor-pointer"
@@ -65,20 +82,24 @@ const Header = () => {
               </div>
             </Link>
             <button
-              className="bg-pink-500 text-white font-[Poppins] text-sm py-2 px-6 rounded md:ml-8 hover:bg-pink-400 
+              onClick={() => setOpen(!open)}
+              className="bg-[#D50CD5] text-white font-[Poppins] text-sm py-2 px-6 rounded md:ml-8 hover:bg-[#9806A9]
     duration-500"
             >
               {STRINGS.NAVBAR_BUTTON_LOGIN}
             </button>
           </ul>
         </div>
-       
       </div>
-      <div className="pt-32 bg-white shadow-md w-full fixed top-0 left-0 pb-10 z-10">
-          <div className=" block  sm:flex  md:flex lg:flex justify-center items-center">
-            <HeaderProducts />
-          </div>
+      <div className="pt-0 sm:pt-20  md:pt-20  lg:pt-20 bg-white shadow-md w-full fixed top-0 left-0 z-10">
+        <div className="hidden sm:flex  md:flex lg:flex justify-center items-center">
+          <HeaderProducts />
         </div>
+      </div>
+      <ModalIzquierdaMenu
+        openModalVar={openModal}
+        setOpenModal={setOpenModal}
+      />
     </>
   );
 };

@@ -4,7 +4,7 @@ import HeaderProducts from "../HeaderProducts/HeaderProduct";
 
 const DetailsHome = () => {
   return (  
-      <div className="bg-pink-800 text-white py-12 mt-80 sm:mt-32 md:mt-32 lg:mt-36">
+      <div className="bg-white text-[#9806A9] py-12 -mt-11 sm:mt-2 md:mt-2 lg:mt-2">
         <div className="container mx-auto text-center ">
           <h1 className="text-4xl font-semibold mb-6 animate-fade-in-up">
             ¡Bienvenido Desiderium nuestra Tienda Erótica!
@@ -13,7 +13,7 @@ const DetailsHome = () => {
             Descubre una amplia selección de productos sensuales para añadir un
             toque de pasión a tu vida.
           </p>
-          <button className="bg-pink-500 hover:bg-pink-400 text-white py-2 px-6 rounded text-lg font-semibold animate-bounce z-0" >
+          <button className="bg-[#D50CD5] hover:bg-[#9806A9] text-white py-2 px-6 rounded text-lg font-semibold animate-bounce z-0" >
             Explora Nuestros Productos
           </button>
           <div className="mt-12 animate-fade-in-up-delay">
@@ -28,7 +28,7 @@ const DetailsHome = () => {
               Nuestros Destacados
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-pink-700 p-4 rounded animate-fade-in-up-delay transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-black p-4 rounded animate-fade-in-up-delay transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://cdn.pixabay.com/photo/2020/06/16/05/20/nude-5304236_1280.jpg" // Reemplaza con la URL de la imagen del producto
                   alt="Producto Destacado"

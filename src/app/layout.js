@@ -1,11 +1,11 @@
-'use client'
+
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "tailwindcss/tailwind.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FloatingWhatsApp } from "react-floating-whatsapp";
+import WhatsapIcon from "@/components/WhatsapIcon";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
             {children}
           </div>
           <Footer />
-          <FloatingWhatsApp phoneNumber='57-3005693097' chatMessage='Bienvenid@ a Desiderium Sex Shop, en que te podemos asesorar.' accountName='Desiderium S e x  S h o p' statusMessage='En Linea' avatar='/logo.png' />
+         <WhatsapIcon/>
         </main>
       </body>
     </html>

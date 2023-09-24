@@ -39,10 +39,15 @@ const CartPage = () => {
     setCartItems(updatedCart);
   };
 
+  const removeItem = (itemId) => {
+    const updatedCart = cartItems.filter(item => item.id !== itemId);
+    setCartItems(updatedCart);
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-semibold mb-4 text-pink-500 text-center">Carrito de Compras</h1>
+        <h1 className="text-3xl font-semibold mb-4 text-[#D50CD5] text-center">Carrito de Compras</h1>
         {cartItems.map(item => (
           <div
             key={item.id}
@@ -55,25 +60,31 @@ const CartPage = () => {
               <div className="flex items-center mt-2">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
-                  className="text-pink-500 font-semibold mr-2"
+                  className="text-[#D50CD5] font-semibold mr-2"
                 >
                   -
                 </button>
                 <p className="text-lg">{item.quantity}</p>
                 <button
                   onClick={() => increaseQuantity(item.id)}
-                  className="text-pink-500 font-semibold ml-2"
+                  className="text-[#D50CD5] font-semibold ml-2"
                 >
                   +
                 </button>
               </div>
             </div>
             <p className="text-lg font-semibold">${item.price * item.quantity}</p>
+            <button
+              onClick={() => removeItem(item.id)}
+              className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-1 ml-2 block mx-auto hover:bg-[#9806A9] transition-colors duration-300"
+            >
+              Eliminar
+            </button>
           </div>
         ))}
         <div className="border-t pt-4">
-          <p className="text-xl font-semibold text-center text-pink-500">Total: ${calculateTotal()}</p>
-          <button className="bg-pink-500 text-white py-2 px-4 rounded mt-4 block mx-auto hover:bg-pink-400 transition-colors duration-300">
+          <p className="text-xl font-semibold text-center text-[#D50CD5]">Total: ${calculateTotal()}</p>
+          <button className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-4 block mx-auto hover:bg-[#9806A9] transition-colors duration-300">
             Comprar
           </button>
         </div>
@@ -83,8 +94,3 @@ const CartPage = () => {
 };
 
 export default CartPage;
-
-
-
-
-

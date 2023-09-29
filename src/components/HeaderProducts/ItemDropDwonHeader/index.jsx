@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ItemDropDwonHeader = ({ title, option }) => {
   return (
     <div className="relative group">
-      <button className="px-4 py-2 rounded hover:text-[#9806A9] transition-all duration-500 ease-in">
+      <button className="px-4 py-2 rounded hover:text-[#9806A9] transition-all duration-500 ease-in font-sans">
         {title} &nbsp;&nbsp;
         <span>
           <FontAwesomeIcon
@@ -14,7 +14,7 @@ const ItemDropDwonHeader = ({ title, option }) => {
           />
         </span>
       </button>
-      <div className="absolute opacity-0 invisible space-y-2 bg-white border rounded shadow-lg origin-top pt-2 z-50 group-hover:opacity-100 group-hover:visible">
+      <div className="absolute opacity-0 invisible space-y-2 bg-white border rounded shadow-lg origin-top pt-2 z-50 group-hover:opacity-100 group-hover:visible font-serif">
         {option?.map((item, key) => (
           <div key={key}>
             <a href={item.link}>
@@ -31,7 +31,7 @@ const ItemDropDwonHeader = ({ title, option }) => {
               </div>
             </a>
             {item.submenu && (
-              <div className="ml-4 space-y-2 ">
+              <div className="hidden ml-4 space-y-2 ">
                 {item.submenu.map((subitem, subkey) => (
                   <a key={subkey} href={subitem.link} >
                     <div className="block px-4 py-2 hover:text-[#9806A9] transition-all duration-500 ease-in">

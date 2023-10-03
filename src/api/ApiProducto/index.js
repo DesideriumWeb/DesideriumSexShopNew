@@ -1,9 +1,9 @@
 
 const getProductos = async () => {
   
-        return await fetch(`${process.env.REACT_APP_API}/lencerias`)
+        return await fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API}/lencerias`)
         .then(res => res.json()) 
-        .catch(res =>{console.log("errrrrrr",res)})        
+        .catch(res =>{console.log("error",res)})        
 }
 const login= async (user) => {
     

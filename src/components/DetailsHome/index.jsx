@@ -27,7 +27,7 @@ const DetailsHome = () => {
             <h2 className="text-3xl font-semibold mb-6 animate-fade-in-up">
               Nuestros Destacados
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 m-4">
               <div className="bg-black p-4 rounded animate-fade-in-up-delay transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://cdn.pixabay.com/photo/2020/06/16/05/20/nude-5304236_1280.jpg" // Reemplaza con la URL de la imagen del producto

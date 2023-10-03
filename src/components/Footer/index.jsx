@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
-  const whatsappNumber = '3005693097'; // Reemplaza con el número de WhatsApp
+  const whatsappNumber = '3005693097';
 
   return (
     <footer className="bg-black text-white py-12">
@@ -25,7 +25,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">Síguenos</h3>
           <div className="flex justify-center md:justify-end space-x-4">
             <a href="https://www.facebook.com/people/Desiderium-Sex-shop/100089852987890/?mibextid=ZbWKwL" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
-            <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/desideriumsexshop/?igshid=ZDdkNTZiNTM%3D" className="text-gray-400 hover:text-white"><i className="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/desideriumsexshop/?igshid=ZDdkNTZiNTM%3D" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
             <a href={`https://wa.me/${whatsappNumber}`} className="text-gray-400 hover:text-white"><i className="fab fa-whatsapp"></i></a>
           </div>

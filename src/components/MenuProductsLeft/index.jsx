@@ -48,7 +48,9 @@ const MenuProductsLeft = ({ options }) => {
                     className="flex w-full justify-between hover:bg-pink-200 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-[#D50CD5] border-l-4 p-1 "
                     key={i}
                   >
-                    <h5 className="font-serif font-normal">{item.name}</h5>
+                    <a href={item.link} className="font-serif font-normal">
+                      {item.name}
+                    </a>
                   </div>
                 ))}
               </div>

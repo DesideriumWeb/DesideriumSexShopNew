@@ -4,6 +4,9 @@ import useGetProduct from "@/hooks/UseGetProduct/useGetProduct";
 
 const Product = () => {
   const { data: products, loading, error } = useGetProduct();
+  const numberFormat = (number) =>{
+    return Intl.NumberFormat().format(number);
+}
 
   return (
     <div className="bg-white text-gray-900 py-12 p-4 sm:p-10 flex justify-center justify-items-center items-center">
@@ -47,7 +50,7 @@ const Product = () => {
                     className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
                   />
                   <h2 className="text-lg font-semibold">{item.title}</h2>
-                  <p className="text-gray-600">${item.precio}</p>
+                  <p className="text-gray-900 font-semibold">$ {numberFormat(item.precio)}</p>
                   <button className="bg-pink-500 text-white py-1 px-2 rounded mt-2 hover:bg-pink-400 transition-colors duration-300">
                     Agregar al Carrito
                   </button>

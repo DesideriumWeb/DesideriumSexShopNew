@@ -21,7 +21,7 @@ const MenuProductsLeft = ({ options }) => {
           <div key={index}>
             <button
               onClick={() => toggleMenu(index)}
-              className="bg-white  flex items-center justify-between tracking-wide border-4 border-transparent active:border-white duration-500 active:text-white hover:text-[#9806A9] rounded-lg text-xl font-sans font-semibold w-[286px]"
+              className="bg-white text-black flex items-center justify-between tracking-wide border-4 border-transparent active:border-white duration-500 active:text-white hover:text-[#9806A9] rounded-lg text-xl font-sans font-semibold w-[286px]"
             >
               {option.name}
               {option.products.length > 0 ? (
@@ -48,7 +48,7 @@ const MenuProductsLeft = ({ options }) => {
                     className="flex w-full justify-between hover:bg-pink-200 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-[#D50CD5] border-l-4 p-1 "
                     key={i}
                   >
-                    <a href={item.link} className="font-serif font-normal">
+                    <a href={item.link} className="font-serif font-normal text-black ">
                       {item.name}
                     </a>
                   </div>

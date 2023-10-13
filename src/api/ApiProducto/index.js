@@ -12,10 +12,8 @@ const login= async (user) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({email:user.email, password:user.password})
-        
+        body: JSON.stringify({email:user.email, password:user.password})      
     };
-
    return await fetch("http://localhost:5000/api/login", options)
         .then(res => res.json())
 }

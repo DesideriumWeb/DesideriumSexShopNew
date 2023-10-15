@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import useGetProduct from "@/hooks/UseGetProduct/useGetProduct";
 
 const Product = () => {
@@ -7,6 +7,39 @@ const Product = () => {
   const numberFormat = (number) =>{
     return Intl.NumberFormat().format(number);
 }
+// Función para obtener el carrito desde el localStorage
+const getCart = () => {
+  const cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(cart) : [];
+};
+
+// Función para agregar un producto al carrito
+const addToCart = (product) => {
+  let producto = 
+    {
+        "id":product._id,
+        "imagePath": product.imagePath[0],
+        "name": product.name,
+        "description": product.description,
+        "precio": product.precio,
+        "title": product.title,
+        "tallaBralette": "38",
+        "tallaPanty": "M",
+        "color":"rojo",
+        "cantidad": 1
+    }
+
+  const currentCart = getCart();
+  currentCart.push(producto);
+  localStorage.setItem("cart", JSON.stringify(currentCart));
+};
+
+useEffect(() => {
+  // Crear un carrito vacío en el localStorage si no existe
+  if (!localStorage.getItem("cart")) {
+    localStorage.setItem("cart", JSON.stringify([]));
+  }
+}, []);
 
   return (
     <div className="bg-white text-gray-900 py-12 p-4 sm:p-10 flex justify-center justify-items-center items-center">
@@ -51,9 +84,9 @@ const Product = () => {
                   />
                   <h2 className="text-lg font-semibold">{item.title}</h2>
                   <p className="text-gray-900 font-semibold">$ {numberFormat(item.precio)}</p>
-                  <button className="bg-pink-500 text-white py-1 px-2 rounded mt-2 hover:bg-pink-400 transition-colors duration-300">
+                  <a href="/cart" className="bg-pink-500 text-white py-1 px-2 rounded mt-2 hover:bg-pink-400 transition-colors duration-300" onClick={()=>addToCart(item)}>
                     Agregar al Carrito
-                  </button>
+                  </a>
                 </div>
               ))}
           </div>

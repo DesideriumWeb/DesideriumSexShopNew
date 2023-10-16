@@ -1,8 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import ReactImageGallery from "react-image-gallery";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [selectedTallaBrasier, setSelectedTallaBrasier] = useState("");
+  const [selectedTallaPanty, setSelectedTallaPanty] = useState("");
 
   // Función para obtener el carrito desde el localStorage
   const getCart = () => {
@@ -69,6 +72,14 @@ const CartPage = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  const handleTallaBrasierChange = (talla) => {
+    setSelectedTallaBrasier(talla);
+  };
+
+  const handleTallaPantyChange = (talla) => {
+    setSelectedTallaPanty(talla);
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-4">
@@ -78,31 +89,37 @@ const CartPage = () => {
         {cartItems.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-md p-4 mb-4 flex text-center sm:text-left md:text-left lg:text-left flex-col sm:flex-row md:flex-row items-center shadow-md"
+            className="bg-white rounded-md p-4 mb-4 flex text-center sm:text-left md:text-left lg:text-left flex-col sm:flex-row md:flex-row items-center shadow-md gap-10 "
           >
-            <img
+            {/* <img
               src={item.imagePath}
               alt={item.name}
-              className="w-44 h-44 object-cover rounded-full mr-4 hover:scale-105 transition-transform duration-300"
-            />
+              className="w-96 h-96 object-cover rounded-full mr-4 hover:scale-105 transition-transform duration-300"
+            /> */}
+            <div>
+               <ReactImageGallery items={item.imagePath.map((imageURL) => ({ original: imageURL,thumbnail :imageURL }))} showPlayButton={false} /> 
+            </div>
             <div className="flex-grow font-semibold">
               <h2 className="text-lg ">{item.name}</h2>
-              <p className="text-black font-sans">
-                Descripción:{" "}
+              <div className="mt-4 font-sans">
+                <p className="text-black">Descripción: </p>
                 <span className="font-normal">{item.description}</span>
-              </p>
-              <p className="text-black font-sans">
-                Precio: ${item.precio.toLocaleString()} Und
-              </p>
+              </div>
+              <div className="font-sans mt-4">
+                <p className="text-black">Precio:</p>
+                <span className="font-normal">
+                  ${item.precio.toLocaleString()} Und
+                </span>
+              </div>
 
               {/* Dropdown de selección de talla de Brasier */}
-              <label
+              {/* <label
                 htmlFor={`talla-brasier-${item.id}`}
                 className="block text-black mt-2"
               >
                 Talla de Brasier:
-              </label>
-              <select
+              </label> */}
+              {/* <select
                 id={`talla-brasier-${item.id}`}
                 value={item.tallaBrasier}
                 onChange={(e) =>
@@ -115,10 +132,32 @@ const CartPage = () => {
                 <option value="34">34</option>
                 <option value="36">36</option>
                 <option value="38">38</option>
-              </select>
+              </select>*/}
+              <div className="mt-4">
+                <h5 className="font-sans">Selecciona una talla de panty:</h5>
+                <div className="tallas-checkboxes mt-2">
+                  {["XS", "S", "M", "L", "XL"].map((talla) => (
+                    <label key={talla} className="talla-checkbox">
+                      <input
+                        type="radio"
+                        value={talla}
+                        checked={selectedTallaPanty === talla}
+                        onChange={() => handleTallaPantyChange(talla)}
+                      />
+                      <span
+                        className={`talla-box ${
+                          selectedTallaPanty === talla ? "selected" : ""
+                        }`}
+                      >
+                        {talla}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
 
               {/* Dropdown de selección de talla de Panty */}
-              <label
+              {/* <label
                 htmlFor={`talla-panty-${item.id}`}
                 className="block text-black mt-2 font-sans"
               >
@@ -138,39 +177,67 @@ const CartPage = () => {
                 <option value="M">M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
-              </select>
-
-              <div className="flex flex-row sm:flex-row md:flex-row">
+              </select> */}
+              <div className="mt-4">
+                <h5 className="font-sans">Selecciona una talla de brasier:</h5>
+                <div className="tallas-checkboxes mt-2 mb-4">
+                  {["30", "32", "34", "36", "38"].map((talla) => (
+                    <label key={talla} className="talla-checkbox">
+                      <input
+                        type="radio"
+                        value={talla}
+                        checked={selectedTallaBrasier === talla}
+                        onChange={() => handleTallaBrasierChange(talla)}
+                      />
+                      <span
+                        className={`talla-box ${
+                          selectedTallaBrasier === talla ? "selected" : ""
+                        }`}
+                      >
+                        {talla}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <h5 className="font-sans">Cantidad :</h5>
+              <div className="flex flex-row sm:flex-row md:flex-row text-center items-center justify-center sm:justify-start">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
-                  className="text-[#D50CD5] font-bold mr-2 text-2xl"
+                  className="text-[#D50CD5] font-bold mr-2 text-6xl ml-2 rounded-sm"
                 >
                   -
                 </button>
                 <p className="text-lg">{item.cantidad}</p>
                 <button
                   onClick={() => increaseQuantity(item.id)}
-                  className="text-[#D50CD5] font-bold ml-2 text-2xl"
+                  className="text-[#D50CD5] font-bold ml-2 text-6xl"
                 >
                   +
                 </button>
               </div>
-              <p className="text-lg font-semibold">
-                Total por producto ${(item.precio * item.cantidad).toLocaleString()}
-              </p>
+              <div className="mt-2">
+                <h5 className="font-sans">Total por producto :</h5>
+                <h5 className="font-semibold text-2xl mt-4">
+                  {" "}
+                  $ {(item.precio * item.cantidad).toLocaleString()}
+                </h5>
+              </div>
             </div>
-            <button
-              onClick={() => removeItem(item.id)}
-              className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-1 ml-2 block mx-auto hover:bg-[#9806A9] transition-colors duration-300 md:hidden"
-            >
-              Eliminar
-            </button>
-            <button
-              onClick={() => removeItem(item.id)}
-              className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-1 ml-2 hidden md:block"
-            >
-              Eliminar
-            </button>
+            <div>
+              <button
+                onClick={() => removeItem(item.id)}
+                className="bg-[#D50CD5]  text-white py-2 px-4 rounded mt-1 ml-2 block mx-auto hover:bg-[#9806A9] transition-colors duration-300 md:hidden"
+              >
+                Eliminar
+              </button>
+              <button
+                onClick={() => removeItem(item.id)}
+                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-2 px-4 rounded mt-1 ml-2 hidden md:block"
+              >
+                Eliminar
+              </button>
+            </div>
           </div>
         ))}
         <div className="border-t pt-4">

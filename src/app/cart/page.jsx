@@ -204,14 +204,14 @@ const CartPage = () => {
               <div className="flex flex-row sm:flex-row md:flex-row text-center items-center justify-center sm:justify-start">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
-                  className="text-[#D50CD5] font-bold mr-2 text-2xl ml-2 rounded-sm"
+                  className="text-[#D50CD5] font-bold mr-2 text-6xl ml-2 rounded-sm"
                 >
                   -
                 </button>
                 <p className="text-lg">{item.cantidad}</p>
                 <button
                   onClick={() => increaseQuantity(item.id)}
-                  className="text-[#D50CD5] font-bold ml-2 text-2xl"
+                  className="text-[#D50CD5] font-bold ml-2 text-6xl"
                 >
                   +
                 </button>

@@ -68,9 +68,16 @@ body {
   line-height: 30px;
   cursor: pointer;
 }
+.talla-box:hover {
+ color: #000;
+ border-radius: 20px;
+  border: 2px solid #000;
+}
 
 .talla-box.selected {
   background-color: #ccc; /* Color de fondo tenue */
   color: #000; /* Color del texto */
+  border-radius: 20px;
+  border: 2px solid #000;
 }
 

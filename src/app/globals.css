@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Tiro+Devanagari+Hindi&display=swap');
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
 .font-global{
   font-family: 'Cinzel Decorative', sans-serif;
 }
@@ -45,5 +46,31 @@ body {
   text-shadow: 10px 10px 10px rgb(152, 6, 169);
   color: rgb(255, 252, 255);
   transition: 2s;
+}
+
+.talla-checkbox {
+  display: inline-block;
+  margin-right: 10px;
+  color:#bcbbbb;
+}
+
+.talla-checkbox input[type="radio"] {
+  display: none;
+}
+
+.talla-box {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid #bcbbbb;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.talla-box.selected {
+  background-color: #ccc; /* Color de fondo tenue */
+  color: #000; /* Color del texto */
 }
 

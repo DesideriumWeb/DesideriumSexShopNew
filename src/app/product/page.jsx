@@ -18,7 +18,7 @@ const addToCart = (product) => {
   let producto = 
     {
         "id":product._id,
-        "imagePath": product.imagePath[0],
+        "imagePath": product.imagePath,
         "name": product.name,
         "description": product.description,
         "precio": product.precio,

@@ -81,3 +81,71 @@ body {
   border: 2px solid #000;
 }
 
+/* Modal.css */
+
+/* Estilo para el botón que abre el modal */
+.modal-toggle {
+  background-color: rgb(213, 13, 213);
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Estilos para el modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  color: #000;
+}
+
+/* Estilo para el botón de cierre del modal */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Estilos para el formulario y sus elementos */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-button {
+  background-color: rgb(213, 13, 213);
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Otros estilos según tus necesidades */
+

@@ -10,11 +10,12 @@ import {
 import Link from "next/link";
 import HeaderProducts from "../HeaderProducts/HeaderProduct";
 import ModalIzquierdaMenu from "../ModalIzquierdaMenu";
+import Login from "../Login";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const numPedidos = 5; // Cambia esto con la cantidad real de pedidos
+  const numPedidos = (JSON.parse(localStorage.getItem("cart")) || []).length;
   return (
     <>
       <div className="shadow-md w-full fixed top-0 left-0 z-20">
@@ -23,8 +24,10 @@ const Header = () => {
             className="font-bold text-2xl cursor-pointer flex flex-col items-center font-[Poppins] 
             "
           >
-            <span className="font-global custom-sombra-text">{STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM}</span>
-            <span  className="font-global custom-sombra-text text-lg">
+            <span className="font-global custom-sombra-text">
+              {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM}
+            </span>
+            <span className="font-global custom-sombra-text text-lg">
               {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM_1}&nbsp;
               {STRINGS.NAVBAR_BUTTON_TITLE_DESIDERIUM_2}
             </span>
@@ -81,13 +84,17 @@ const Header = () => {
                 )}
               </div>
             </Link>
-            <button
+            {/* <Link
+              href="/login"
               onClick={() => setOpen(!open)}
               className="bg-[#D50CD5] text-white font-[Poppins] text-sm py-2 px-6 rounded md:ml-8 hover:bg-[#9806A9]
     duration-500"
             >
               {STRINGS.NAVBAR_BUTTON_LOGIN}
-            </button>
+            </Link> */}
+            <div className="sm:ml-6">
+              <Login />
+            </div>
           </ul>
         </div>
       </div>

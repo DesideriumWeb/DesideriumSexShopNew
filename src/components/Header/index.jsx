@@ -1,6 +1,6 @@
 "use client";
 import { STRINGS, TITLE_MENU_NAVBAR } from "@/config/config";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -15,7 +15,15 @@ import Login from "../Login";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const numPedidos = (JSON.parse(localStorage.getItem("cart")) || []).length;
+  const [numPedidos, setNumeroPedidos] = useState('');
+
+  useEffect(() => {
+    if (localStorage.getItem("cart")) {
+      const nummeroPedidos = (JSON.parse(localStorage.getItem("cart")) || [])
+        .length;
+        setNumeroPedidos(nummeroPedidos)
+    }
+  }, []);
   return (
     <>
       <div className="shadow-md w-full fixed top-0 left-0 z-20">

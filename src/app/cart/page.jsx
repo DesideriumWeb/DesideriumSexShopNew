@@ -103,11 +103,11 @@ const CartPage = () => {
               <h2 className="text-lg ">{item.name}</h2>
               <div className="mt-4 font-sans">
                 <p className="text-black">Descripción: </p>
-                <span className="font-normal">{item.description}</span>
+                <span className="text-gray-500 font-normal">{item.description}</span>
               </div>
               <div className="font-sans mt-4">
                 <p className="text-black">Precio:</p>
-                <span className="font-normal">
+                <span className="text-gray-500 font-normal">
                   ${item.precio.toLocaleString()} Und
                 </span>
               </div>
@@ -218,7 +218,7 @@ const CartPage = () => {
               </div>
               <div className="mt-2">
                 <h5 className="font-sans">Total por producto :</h5>
-                <h5 className="font-semibold text-2xl mt-4">
+                <h5 className="text-black font-semibold text-2xl mt-4">
                   {" "}
                   $ {(item.precio * item.cantidad).toLocaleString()}
                 </h5>

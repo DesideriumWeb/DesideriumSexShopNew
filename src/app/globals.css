@@ -92,6 +92,10 @@ body {
   border: none;
   border-radius: 5px;
 }
+.modal-toggle:hover{
+  transition: 0.5s;
+  background-color: rgb(152, 6, 169);
+}
 
 /* Estilos para el modal */
 .modal {

@@ -12,7 +12,7 @@ const ContactForm = () => {
     e.preventDefault();
     const mailtoLink = `mailto:${emailMe}?subject=${encodeURIComponent(
       subject
-    )}&body=${encodeURIComponent(body)} correo :${email}`;
+    )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 

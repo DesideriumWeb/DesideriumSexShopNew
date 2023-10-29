@@ -200,7 +200,7 @@ const CartPage = () => {
                   ))}
                 </div>
               </div>
-              <h5 className="font-sans">Cantidad :</h5>
+              <h5 className="font-sans text-black">Cantidad :</h5>
               <div className="flex flex-row sm:flex-row md:flex-row text-center items-center justify-center sm:justify-start">
                 <button
                   onClick={() => decreaseQuantity(item.id)}

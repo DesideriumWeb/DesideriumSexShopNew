@@ -125,7 +125,7 @@ const FormularioContact = () => {
         >
           {({ values, dirty, isValid }) => (
             <Form>
-              <form className="m-5 md:m-10 mt-20">
+              <form className="m-5 md:m-10 mt-20 font-serif">
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                     <label
@@ -327,9 +327,9 @@ const FormularioContact = () => {
                 <div className="mt-6 flex justify-center">
                   <button
                     type="submit"
-                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="bg-[#D50CD5]  text-white py-2 px-4 rounded mt-1 ml-2 block mx-auto hover:bg-[#9806A9] transition-colors duration-300"
                   >
-                    Submit
+                    Enviar
                   </button>
                 </div>
               </form>

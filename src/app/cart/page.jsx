@@ -134,7 +134,7 @@ const CartPage = () => {
                 <option value="38">38</option>
               </select>*/}
               <div className="mt-4">
-                <h5 className="font-sans">Selecciona una talla de panty:</h5>
+                <h5 className="font-sans text-black">Selecciona una talla de panty:</h5>
                 <div className="tallas-checkboxes mt-2">
                   {["XS", "S", "M", "L", "XL"].map((talla) => (
                     <label key={talla} className="talla-checkbox">
@@ -179,7 +179,7 @@ const CartPage = () => {
                 <option value="XL">XL</option>
               </select> */}
               <div className="mt-4">
-                <h5 className="font-sans">Selecciona una talla de brasier:</h5>
+                <h5 className="font-sans text-black">Selecciona una talla de brasier:</h5>
                 <div className="tallas-checkboxes mt-2 mb-4">
                   {["30", "32", "34", "36", "38"].map((talla) => (
                     <label key={talla} className="talla-checkbox">
@@ -200,7 +200,7 @@ const CartPage = () => {
                   ))}
                 </div>
               </div>
-              <h5 className="font-sans">Cantidad :</h5>
+              <h5 className="font-sans text-black">Cantidad :</h5>
               <div className="flex flex-row sm:flex-row md:flex-row text-center items-center justify-center sm:justify-start">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
@@ -208,7 +208,7 @@ const CartPage = () => {
                 >
                   -
                 </button>
-                <p className="text-lg">{item.cantidad}</p>
+                <p className="text-lg text-black">{item.cantidad}</p>
                 <button
                   onClick={() => increaseQuantity(item.id)}
                   className="text-[#D50CD5] font-bold ml-2 text-6xl"

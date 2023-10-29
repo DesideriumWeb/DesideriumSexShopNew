@@ -48,7 +48,7 @@ const Login = () => {
               <h3 className="mb-4 text-xl font-medium  text-black">
                 Login
               </h3>
-              <form className="space-y-6" action="#">
+              <form className="space-y-6 font-serif" action="#">
                 <div>
                   <label
                     htmlFor="email"
@@ -88,7 +88,7 @@ const Login = () => {
                         id="remember"
                         type="checkbox"
                         defaultValue=""
-                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:bg-pink-700 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                         required=""
                       />
                     </div>
@@ -96,14 +96,14 @@ const Login = () => {
                       htmlFor="remember"
                       className="ml-2 text-sm font-medium text-black"
                     >
-                      Remember me
+                      Recordar contraseña {" "}
                     </label>
                   </div>
                   <a
                     href="#"
                     className="text-sm text-[#D50CD5] hover:underline dark:text-[#D50CD5]"
                   >
-                    Lost Password?
+                    Perdio su contraseña? 
                   </a>
                 </div>
                 <button
@@ -115,10 +115,10 @@ const Login = () => {
                 <div className="text-sm font-medium text-black">
                   No esta registrado?{" "}
                   <a
-                    href="#"
+                    href="/register"
                     className="text-[#D50CD5]  hover:underline "
                   >
-                    Create account
+                    Registrate
                   </a>
                 </div>
               </form>

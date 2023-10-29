@@ -80,7 +80,7 @@ const Header = () => {
               </li>
             ))}
             <Link onClick={() => setOpen(!open)} href="/cart">
-              <div className="text-3xl relative mt-4 sm:ml-6 md:ml-6 lg:ml-6">
+              <div className="text-3xl relative mt-1 sm:ml-6 md:ml-6 lg:ml-6">
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className="text-white hover:text-gray-400 cursor-pointer"

@@ -2,16 +2,17 @@
 import React, { useState } from "react";
 
 const ContactForm = () => {
-  const [email, setEmail] = useState("desideriumsexshop@gmail.com");
+  const [emailMe, setEmailME] = useState("desideriumsex@gmail.com");
+  const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
 
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:${emailMe}?subject=${encodeURIComponent(
       subject
-    )}&body=${encodeURIComponent(body)}`;
+    )}&body=${encodeURIComponent(body)} correo :${email}`;
     window.location.href = mailtoLink;
   };
 

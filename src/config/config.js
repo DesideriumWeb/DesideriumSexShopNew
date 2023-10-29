@@ -40,7 +40,7 @@ export const TITLE_MENU_NAVBAR = [
   { name: "HOME", link: "/" },
   { name: "PRODUCTOS", link: "/product" },
   { name: "ACERCA DE", link: "/about" },
-  { name: "CONTACTO", link: "/contact" },
+  { name: "CONTACTO", link: "/contact-form" },
 ];
 export const MENU_LENCERIA = [
   { name: "Disfraces Eróticos", link: "/disfracesEroticos" },

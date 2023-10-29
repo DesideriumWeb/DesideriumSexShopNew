@@ -217,7 +217,7 @@ const CartPage = () => {
                 </button>
               </div>
               <div className="mt-2">
-                <h5 className="font-sans">Total por producto :</h5>
+                <h5 className="font-sans text-black">Total por producto :</h5>
                 <h5 className="text-black font-semibold text-2xl mt-4">
                   {" "}
                   $ {(item.precio * item.cantidad).toLocaleString()}

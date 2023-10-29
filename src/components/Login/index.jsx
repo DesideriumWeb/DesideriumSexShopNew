@@ -45,39 +45,39 @@ const Login = () => {
           <span className="sr-only">Close modal</span>
         </button>
             <div className="px-6 py-6 lg:px-8">
-              <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-                Sign in to our platform
+              <h3 className="mb-4 text-xl font-medium  text-black">
+                Login
               </h3>
               <form className="space-y-6" action="#">
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium  text-black"
                   >
-                    Your email
+                    Correo electronico
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="name@company.com"
+                    className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 text-black "
+                    placeholder="Email@company.com"
                     required=""
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-black"
                   >
-                    Your password
+                    Contraseña
                   </label>
                   <input
                     type="password"
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 text-black"
                     required=""
                   />
                 </div>
@@ -94,7 +94,7 @@ const Login = () => {
                     </div>
                     <label
                       htmlFor="remember"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      className="ml-2 text-sm font-medium text-black"
                     >
                       Remember me
                     </label>
@@ -108,15 +108,15 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-[#D50CD5] hover:bg-[#9806A9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full text-white bg-[#D50CD5] hover:bg-[#9806A9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
-                  Login to your account
+                  Iniciar Session
                 </button>
-                <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                  Not registered?{" "}
+                <div className="text-sm font-medium text-black">
+                  No esta registrado?{" "}
                   <a
                     href="#"
-                    className="text-[#D50CD5]  hover:underline dark:bg-[#D50CD5]"
+                    className="text-[#D50CD5]  hover:underline "
                   >
                     Create account
                   </a>

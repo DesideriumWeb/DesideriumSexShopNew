@@ -89,19 +89,17 @@ const FormularioContact = () => {
     }
   };
 
-  const handleInitialValue = () => {
-    return {
-      nombre: "",
-      apellido: "",
-      email: "",
-      telefono: "",
-      ciudad: "",
-      departamento: "",
-      direccionResidencia: "",
-      fNacimiento: "",
-      password: "",
-      confirmarPassword: "",
-    };
+  const handleInitialValue = {
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    ciudad: "",
+    departamento: "",
+    direccionResidencia: "",
+    fNacimiento: "",
+    password: "",
+    confirmarPassword: "",
   };
   useEffect(() => {
     if (banderaUser) {
@@ -125,7 +123,7 @@ const FormularioContact = () => {
         >
           {({ values, dirty, isValid }) => (
             <Form>
-              <form className="m-5 md:m-10 mt-20 font-serif">
+              <div className="m-5 md:m-10 mt-20 font-serif">
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                     <label
@@ -283,7 +281,7 @@ const FormularioContact = () => {
                     <ErrorMessage name="password" />
                   </label>
                   <Field
-                    type="text"
+                    type="password"
                     name="password"
                     className="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="password"
@@ -314,7 +312,10 @@ const FormularioContact = () => {
                     }
                   >
                     {iconConfirmarPassword ? (
-                      <FontAwesomeIcon icon={faEye} className="text-gray-600 mt-9 " />
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        className="text-gray-600 mt-9 "
+                      />
                     ) : (
                       <FontAwesomeIcon
                         icon={faEyeSlash}
@@ -332,7 +333,7 @@ const FormularioContact = () => {
                     Enviar
                   </button>
                 </div>
-              </form>
+              </div>
             </Form>
           )}
         </Formik>

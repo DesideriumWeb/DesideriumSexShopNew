@@ -3,8 +3,10 @@ import React, { useEffect } from "react";
 import useGetProduct from "@/hooks/UseGetProduct/useGetProduct";
 import ReactImageGallery from "react-image-gallery";
 
-const Product = () => {
-  const { data: products, loading, error } = useGetProduct();
+const Product = ({ params }) => {
+
+  const { category } = params;
+  const { data: products, loading, error } = useGetProduct(category);
   const numberFormat = (number) => {
     return Intl.NumberFormat().format(number);
   };
@@ -78,7 +80,7 @@ const Product = () => {
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {products &&
-                products.map((item, key) => (
+                products[0].map((item, key) => (
                   <div
                     key={key}
                     className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg"

@@ -1,8 +1,8 @@
 
-import { getProductos } from '../../api/ApiProducto/index';
+import { getProductos,getProductosForCategory } from '../../api/ApiProducto/index';
 import { useEffect, useState } from 'react';
 
-const useGetProduct = () => {
+const useGetProduct = (category) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const useGetProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getProductos();
+        const response = await getProductosForCategory(category);
         setData(response);
       } catch (error) {
         setError(error);

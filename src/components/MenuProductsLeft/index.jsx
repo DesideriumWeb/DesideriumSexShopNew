@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MENU_MODAL } from "@/config/config";
+import Link from "next/link"; // Importa Link de next.js
 
-const MenuProductsLeft = ({ options }) => {
+const MenuProductsLeft = ({ setIsOpen }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleMenu = (index) => {
@@ -48,9 +49,13 @@ const MenuProductsLeft = ({ options }) => {
                     className="flex w-full justify-between hover:bg-pink-200 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-[#D50CD5] border-l-4 p-1 "
                     key={i}
                   >
-                    <a href={item.link} className="font-serif font-normal text-black ">
+                    <Link
+                      href={`/product/${item.link}`}
+                      className="font-serif font-normal text-black "
+                      onClick={()=>setIsOpen(false)}
+                    >
                       {item.name}
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>

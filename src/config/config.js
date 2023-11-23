@@ -99,7 +99,7 @@ export const MENU_MODAL = [
     name: "Lencería",
     products: [
       { name: "Disfraces Eróticos", link: "/disfracesEroticos" },
-      { name: "Lencería para ella", link: "/product" },
+      { name: "Lencería para ella", link: "lenceria" },
       { name: "Pesoneras", link: "/pesoneras" },
     ],
   },

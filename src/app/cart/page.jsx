@@ -91,19 +91,22 @@ const CartPage = () => {
             key={item.id}
             className="bg-white rounded-md p-4 mb-4 flex text-center sm:text-left md:text-left lg:text-left flex-col sm:flex-row md:flex-row items-center shadow-md gap-10 "
           >
-            {/* <img
-              src={item.imagePath}
-              alt={item.name}
-              className="w-96 h-96 object-cover rounded-full mr-4 hover:scale-105 transition-transform duration-300"
-            /> */}
             <div>
-               <ReactImageGallery items={item.imagePath.map((imageURL) => ({ original: imageURL,thumbnail :imageURL }))} showPlayButton={false} /> 
+              <ReactImageGallery
+                items={item.imagePath.map((imageURL) => ({
+                  original: imageURL,
+                  thumbnail: imageURL,
+                }))}
+                showPlayButton={false}
+              />
             </div>
             <div className="flex-grow font-semibold">
               <h2 className="text-lg ">{item.name}</h2>
               <div className="mt-4 font-sans">
                 <p className="text-black">Descripción: </p>
-                <span className="text-gray-500 font-normal">{item.description}</span>
+                <span className="text-gray-500 font-normal">
+                  {item.description}
+                </span>
               </div>
               <div className="font-sans mt-4">
                 <p className="text-black">Precio:</p>
@@ -111,95 +114,59 @@ const CartPage = () => {
                   ${item.precio.toLocaleString()} Und
                 </span>
               </div>
+              {item.categoria === "lenceria" ? (
+                <>
+                  <div className="mt-4">
+                    <h5 className="font-sans text-black">
+                      Selecciona una talla de panty:
+                    </h5>
+                    <div className="tallas-checkboxes mt-2">
+                      {["XS", "S", "M", "L", "XL"].map((talla) => (
+                        <label key={talla} className="talla-checkbox">
+                          <input
+                            type="radio"
+                            value={talla}
+                            checked={selectedTallaPanty === talla}
+                            onChange={() => handleTallaPantyChange(talla)}
+                          />
+                          <span
+                            className={`talla-box ${
+                              selectedTallaPanty === talla ? "selected" : ""
+                            }`}
+                          >
+                            {talla}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <h5 className="font-sans text-black">
+                      Selecciona una talla de brasier:
+                    </h5>
+                    <div className="tallas-checkboxes mt-2 mb-4">
+                      {["30", "32", "34", "36", "38"].map((talla) => (
+                        <label key={talla} className="talla-checkbox">
+                          <input
+                            type="radio"
+                            value={talla}
+                            checked={selectedTallaBrasier === talla}
+                            onChange={() => handleTallaBrasierChange(talla)}
+                          />
+                          <span
+                            className={`talla-box ${
+                              selectedTallaBrasier === talla ? "selected" : ""
+                            }`}
+                          >
+                            {talla}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>{" "}
+                </>
+              ) : null}
 
-              {/* Dropdown de selección de talla de Brasier */}
-              {/* <label
-                htmlFor={`talla-brasier-${item.id}`}
-                className="block text-black mt-2"
-              >
-                Talla de Brasier:
-              </label> */}
-              {/* <select
-                id={`talla-brasier-${item.id}`}
-                value={item.tallaBrasier}
-                onChange={(e) =>
-                  handleBrasierTallaChange(item.id, e.target.value)
-                }
-                className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-[#D50CD5] text-black mt-1"
-              >
-                <option value="">Seleccionar talla de Brasier</option>
-                <option value="32">32</option>
-                <option value="34">34</option>
-                <option value="36">36</option>
-                <option value="38">38</option>
-              </select>*/}
-              <div className="mt-4">
-                <h5 className="font-sans text-black">Selecciona una talla de panty:</h5>
-                <div className="tallas-checkboxes mt-2">
-                  {["XS", "S", "M", "L", "XL"].map((talla) => (
-                    <label key={talla} className="talla-checkbox">
-                      <input
-                        type="radio"
-                        value={talla}
-                        checked={selectedTallaPanty === talla}
-                        onChange={() => handleTallaPantyChange(talla)}
-                      />
-                      <span
-                        className={`talla-box ${
-                          selectedTallaPanty === talla ? "selected" : ""
-                        }`}
-                      >
-                        {talla}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Dropdown de selección de talla de Panty */}
-              {/* <label
-                htmlFor={`talla-panty-${item.id}`}
-                className="block text-black mt-2 font-sans"
-              >
-                Talla de Panty:
-              </label>
-              <select
-                id={`talla-panty-${item.id}`}
-                value={item.tallaPanty}
-                onChange={(e) =>
-                  handlePantyTallaChange(item.id, e.target.value)
-                }
-                className="w-full  p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-[#D50CD5] text-black mt-1"
-              >
-                <option value="" className="font-sans">Seleccionar talla de Panty</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select> */}
-              <div className="mt-4">
-                <h5 className="font-sans text-black">Selecciona una talla de brasier:</h5>
-                <div className="tallas-checkboxes mt-2 mb-4">
-                  {["30", "32", "34", "36", "38"].map((talla) => (
-                    <label key={talla} className="talla-checkbox">
-                      <input
-                        type="radio"
-                        value={talla}
-                        checked={selectedTallaBrasier === talla}
-                        onChange={() => handleTallaBrasierChange(talla)}
-                      />
-                      <span
-                        className={`talla-box ${
-                          selectedTallaBrasier === talla ? "selected" : ""
-                        }`}
-                      >
-                        {talla}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
               <h5 className="font-sans text-black">Cantidad :</h5>
               <div className="flex flex-row sm:flex-row md:flex-row text-center items-center justify-center sm:justify-start">
                 <button

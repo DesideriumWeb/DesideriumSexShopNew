@@ -49,13 +49,13 @@ const MenuProductsLeft = ({ setIsOpen }) => {
                     className="flex w-full justify-between hover:bg-pink-200 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-[#D50CD5] border-l-4 p-1 "
                     key={i}
                   >
-                    <Link
+                    <a
                       href={`/product/${item.link}`}
                       className="font-serif font-normal text-black "
                       onClick={()=>setIsOpen(false)}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   </div>
                 ))}
               </div>

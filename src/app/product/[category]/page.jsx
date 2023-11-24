@@ -4,7 +4,6 @@ import useGetProductCategory from "@/hooks/UseGetProduct/useGetProductCategory";
 import ReactImageGallery from "react-image-gallery";
 
 const Product = ({ params }) => {
-
   const { category } = params;
   const { data: products, loading, error } = useGetProductCategory(category);
   const numberFormat = (number) => {
@@ -29,6 +28,7 @@ const Product = ({ params }) => {
       tallaPanty: "M",
       color: "rojo",
       cantidad: 1,
+      categoria: params.category,
     };
 
     const currentCart = getCart();

@@ -126,7 +126,7 @@ const FormularioRegistro = () => {
         >
           {({ values, dirty, isValid }) => (
             <Form>
-                <div className="grid gap-6 mb-6 md:grid-cols-2">
+                {/* <div className="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                     <label
                       htmlFor="nombre"
@@ -355,7 +355,7 @@ const FormularioRegistro = () => {
                   >
                     Submit
                   </button>
-                </div>
+                </div> */}
             </Form>
           )}
         </Formik>

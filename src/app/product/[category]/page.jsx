@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import useGetProduct from "@/hooks/UseGetProduct/useGetProduct";
+import useGetProductCategory from "@/hooks/UseGetProduct/useGetProductCategory";
 import ReactImageGallery from "react-image-gallery";
 
-const Product = () => {
-  const { data: products, loading, error } = useGetProduct();
+const Product = ({ params }) => {
+  const { category } = params;
+  const { data: products, loading, error } = useGetProductCategory(category);
   const numberFormat = (number) => {
     return Intl.NumberFormat().format(number);
   };
@@ -27,6 +28,7 @@ const Product = () => {
       tallaPanty: "M",
       color: "rojo",
       cantidad: 1,
+      categoria: params.category,
     };
 
     const currentCart = getCart();
@@ -43,7 +45,7 @@ const Product = () => {
 
   return (
     <>
-      <div className="bg-white text-gray-900 py-1 p-4 sm:p-10 flex justify-center justify-items-center items-center">
+      <div className="container mx-auto min-h-screen bg-white text-gray-900 py-1 p-4 sm:p-10 flex justify-center justify-items-center items-center">
         {loading ? (
           <div
             role="status"
@@ -78,7 +80,7 @@ const Product = () => {
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {products &&
-                products.map((item, key) => (
+                products[0].map((item, key) => (
                   <div
                     key={key}
                     className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg"

@@ -59,7 +59,7 @@ const ModalIzquierdaMenu = ({ openModalVar, setOpenModal }) => {
 
         {/* Cuerpo del modal */}
         <div className="p-4 ">
-            <MenuProductsLeft/>
+            <MenuProductsLeft setIsOpen={setIsOpen}/>
         </div>
       </div>
     </div>

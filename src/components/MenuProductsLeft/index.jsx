@@ -45,18 +45,16 @@ const MenuProductsLeft = ({ setIsOpen }) => {
                 style={{ maxHeight: "15rem" }} // Establecer la altura máxima aquí
               >
                 {option.products.map((item, i) => (
-                  <div
+                  <a
                     className="flex w-full justify-between hover:bg-pink-200 cursor-pointer rounded-r-lg border-l-transparent hover:border-l-[#D50CD5] border-l-4 p-1 "
                     key={i}
+                    href={`/product/${item.link}`}
+                    onClick={() => setIsOpen(false)}
                   >
-                    <a
-                      href={`/product/${item.link}`}
-                      className="font-serif font-normal text-black "
-                      onClick={()=>setIsOpen(false)}
-                    >
+                    <div className="font-serif font-normal text-black ">
                       {item.name}
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                 ))}
               </div>
             )}

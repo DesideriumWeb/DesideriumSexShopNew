@@ -10,7 +10,7 @@ const DetailsHome = () => {
     <>
       <div className="bg-white text-[#9806A9] py-12 -mt-11 sm:mt-2 md:mt-2 lg:mt-2">
         <div className="container mx-auto text-center ">
-          <h1 className="text-4xl font-semibold mb-6 animate-fade-in-up">
+          <h1 className="text-xl sm:text-xl md:text-1xl  lg:text-3xl font-semibold mb-6 animate-fade-in-up">
             ¡Bienvenido Desiderium nuestra Tienda Erótica!
           </h1>
           <p className="text-lg mb-8 animate-fade-in-up-delay">
@@ -18,7 +18,7 @@ const DetailsHome = () => {
             toque de pasión a tu vida.
           </p>
           <button
-            className="bg-[#D50CD5] hover:bg-[#9806A9] text-white py-2 px-6 rounded text-lg font-semibold animate-bounce z-0"
+            className="bg-[#D50CD5] hover:bg-[#9806A9] text-white py-2 px-6 rounded text-md sm:text-lg md:text-xl  lg:text-3xl  font-semibold animate-bounce z-0"
             onClick={() => setOpenModal(true)}
           >
             Explora Nuestros Productos
@@ -31,7 +31,7 @@ const DetailsHome = () => {
             />
           </div>
           <div className="mt-12">
-            <h2 className="text-3xl font-semibold mb-6 animate-fade-in-up">
+            <h2 className="text-xl sm:text-xl md:text-1xl  lg:text-3xl font-semibold mb-6 animate-fade-in-up">
               Nuestros Destacados
             </h2>
             {loading ? (

@@ -10,7 +10,8 @@ const CartPage = () => {
   // Función para obtener el carrito desde el localStorage
   const getCart = () => {
     const cart = localStorage.getItem("cart");
-    return cart ? JSON.parse(cart) : [];
+    const cart_ = JSON.parse(cart)
+    return cart ? [...cart_].reverse() : [];
   };
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const CartPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-semibold mb-4 text-[#D50CD5] text-center">
+        <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#D50CD5] text-center">
           Carrito de Compras
         </h1>
         {cartItems.map((item) => (

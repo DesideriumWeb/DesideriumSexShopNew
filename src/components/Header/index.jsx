@@ -15,14 +15,26 @@ import Login from "../Login";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const [numPedidos, setNumeroPedidos] = useState('');
+  const [numPedidos, setNumeroPedidos] = useState("");
+  const [showIcon, setShowIcon] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("cart")) {
       const nummeroPedidos = (JSON.parse(localStorage.getItem("cart")) || [])
         .length;
-        setNumeroPedidos(nummeroPedidos)
+      setNumeroPedidos(nummeroPedidos);
     }
+  }, []);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Después de 5 segundos, establece showIcon a true
+      setShowIcon(true);
+    }, 500);
+
+    // Limpiar el temporizador al desmontar el componente
+    return () => clearTimeout(timer);
   }, []);
   return (
     <>
@@ -80,11 +92,13 @@ const Header = () => {
               </li>
             ))}
             <Link onClick={() => setOpen(!open)} href="/cart">
-              <div className="text-3xl relative mt-1 sm:ml-6 md:ml-6 lg:ml-6">
-                <FontAwesomeIcon
-                  icon={faShoppingCart}
-                  className="text-white hover:text-gray-400 cursor-pointer"
-                />
+              <div className="text-3xl relative mt-1 sm:ml-6 sm:mt-6 md:ml-6 md:mt-6 lg:ml-6 lg:mt-6 ">
+                {showIcon && (
+                  <FontAwesomeIcon
+                    icon={faShoppingCart}
+                    className="text-white hover:text-gray-400 cursor-pointer"
+                  />
+                )}
                 {numPedidos > 0 && (
                   <span className="relative -top-8 -right-3 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm transform translate-y-[-50%] translate-x-1/2 transition-all duration-300">
                     {numPedidos}

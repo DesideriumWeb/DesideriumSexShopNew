@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import useGetProductCategory from "@/hooks/UseGetProduct/useGetProductCategory";
-import ReactImageGallery from "react-image-gallery";
+import DetailsProduct from "@/components/DetailsProduct";
 
 const Product = ({ params }) => {
   const { category } = params;
@@ -9,40 +9,7 @@ const Product = ({ params }) => {
   const numberFormat = (number) => {
     return Intl.NumberFormat().format(number);
   };
-  // Función para obtener el carrito desde el localStorage
-  const getCart = () => {
-    const cart = localStorage.getItem("cart");
-    return cart ? JSON.parse(cart) : [];
-  };
-
-  // Función para agregar un producto al carrito
-  const addToCart = (product) => {
-    let producto = {
-      id: product._id,
-      imagePath: product.imagePath,
-      name: product.name,
-      description: product.description,
-      precio: product.precio,
-      title: product.title,
-      tallaBralette: "38",
-      tallaPanty: "M",
-      color: "rojo",
-      cantidad: 1,
-      categoria: params.category,
-    };
-
-    const currentCart = getCart();
-    currentCart.push(producto);
-    localStorage.setItem("cart", JSON.stringify(currentCart));
-  };
-
-  useEffect(() => {
-    // Crear un carrito vacío en el localStorage si no existe
-    if (!localStorage.getItem("cart")) {
-      localStorage.setItem("cart", JSON.stringify([]));
-    }
-  }, []);
-
+  
   return (
     <>
       <div className="container mx-auto min-h-screen bg-white text-gray-900 py-1 p-4 sm:p-10 flex justify-center justify-items-center items-center">
@@ -75,7 +42,7 @@ const Product = ({ params }) => {
           </div>
         ) : (
           <div className="container mx-auto">
-            <h1 className="text-3xl font-semibold mb-2 text-[#9806A9]">
+            <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-[#9806A9]">
               Nuestros Productos
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -90,26 +57,11 @@ const Product = ({ params }) => {
                       alt={item.name}
                       className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
                     />
-                    {/* <div>
-                      <ReactImageGallery
-                        items={item.imagePath.map((imageURL) => ({
-                          original: imageURL,
-                        }))}
-                        showPlayButton={false}
-                      
-                      />
-                    </div> */}
                     <h2 className="text-sm font-semibold">{item.title}</h2>
                     <p className="text-gray-900 font-semibold mb-2">
                       $ {numberFormat(item.precio)}
                     </p>
-                    <a
-                      href="/cart"
-                      className="bg-[#D50DD5] text-white py-1 px-2 rounded mt-2 hover:bg-[#9806A9] transition-colors duration-300 font-serif"
-                      onClick={() => addToCart(item)}
-                    >
-                      Agregar al Carrito
-                    </a>
+                    <DetailsProduct  product={item}  params={params}/>
                   </div>
                 ))}
             </div>

@@ -112,7 +112,7 @@ const DetailsProduct = ({ product ,params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="pt-3">
+                  <div className="pt-3 sm:pt-40 md:pt-40 lg:pt-40">
                     <a
                       href="/cart"
                       onClick={() => addToCart(product)}

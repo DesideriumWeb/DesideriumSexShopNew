@@ -53,7 +53,7 @@ export const MENU_PIJAMAS = [
   { name: "Otras", link: "/otras" },
 ];
 export const MENU_LUBRICANTES_COSMETICA = [
-  { name: "Lubricantes anales", link: "/lubricantesAnales" },
+  { name: "Lubricantes anales", link: "/lubricante" },
   { name: "Lubricantes a prueba de agua", link: "/lubricantesAPruebaDeAgua" },
   {
     name: "Lubricantes frios y calientes",
@@ -114,7 +114,7 @@ export const MENU_MODAL = [
   {
     name: "Lubricantes y Cosmética",
     products: [
-      { name: "Lubricantes anales", link: "/lubricantesAnales" },
+      { name: "Lubricantes anales", link: "/lubricante" },
       {
         name: "Lubricantes a prueba de agua",
         link: "/lubricantesAPruebaDeAgua",

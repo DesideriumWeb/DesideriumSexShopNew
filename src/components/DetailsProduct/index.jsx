@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReactImageGallery from "react-image-gallery";
 //import "./Modal.css"; // Asegúrate de tener un archivo CSS para los estilos del modal
 
-const DetailsProduct = ({ product ,params }) => {
+const DetailsProduct = ({ product, params }) => {
   const [showModal, setShowModal] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
@@ -54,7 +54,7 @@ const DetailsProduct = ({ product ,params }) => {
 
         {showModal && (
           <div className="modal z-50">
-            <div className="modal-content w-[300px] sm:w-[600px] sm:h-[700px]  md:w-[700px] md:h-[600px]  lg:w-[800px] lg:h-[700px]  ">
+            <div className="modal-content w-[300px] sm:w-[550px] sm:h-[440px]  md:w-[600px] md:h-[440px]  lg:w-[800px] lg:h-[440px]  ">
               <button
                 onClick={toggleModal}
                 type="button"
@@ -78,16 +78,16 @@ const DetailsProduct = ({ product ,params }) => {
                 </svg>
                 <span className="sr-only">Close modal</span>
               </button>
-              <div className="mx-2 my-6 lg:mx-8">
+              <div className="mx-2 my-1 lg:mx-8">
                 <div className="container mx-auto">
                   <h1 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-4 lg:mb-6 text-[#D50CD5] text-center">
                     Detalle de producto
                   </h1>
                   <div
                     key={product.id}
-                    className="bg-white p-1 sm:p-2 lg:p-2 flex flex-col sm:flex-row  md:flex-row lg:flex-row"
+                    className="bg-white p-1 sm:p-1 lg:p-1 flex flex-col sm:flex-row  md:flex-row lg:flex-row"
                   >
-                    <div className=" sm:w-[200px]  md:w-[200px] lg:w-[200px]  sm:h-[200px]  md:h-[200px] lg:h-[200px]">
+                    <div className=" sm:max-w-[130px]  md:max-w-[130px] lg:max-w-[130px]  sm:max-h-[130px]  md:max-h-[130px] lg:max-h-[130px]">
                       <ReactImageGallery
                         items={product.imagePath.map((imageURL) => ({
                           original: imageURL,
@@ -96,7 +96,7 @@ const DetailsProduct = ({ product ,params }) => {
                         showPlayButton={false}
                       />
                     </div>
-                    <div className="flex-grow font-semibold ">
+                    <div className="flex-grow font-semibold">
                       <h2 className="text-sm font-serif">{product.name}</h2>
                       <div className="mt-4 font-sans justify-start">
                         <p className="text-black ">Descripción: </p>
@@ -110,16 +110,18 @@ const DetailsProduct = ({ product ,params }) => {
                           ${product.precio.toLocaleString()} Und
                         </span>
                       </div>
+                      <div className="w-full flex justify-center justify-items-center">
+                        <div className="pt-3 sm:pt-10 md:pt-10 w-48 lg:pt-10">
+                          <a
+                            href="/cart"
+                            onClick={() => addToCart(product)}
+                            className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
+                          >
+                            Añadir a carrito
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="pt-3 sm:pt-40 md:pt-40 lg:pt-40">
-                    <a
-                      href="/cart"
-                      onClick={() => addToCart(product)}
-                      className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
-                    >
-                      Añadir a carrito
-                    </a>
                   </div>
                 </div>
               </div>

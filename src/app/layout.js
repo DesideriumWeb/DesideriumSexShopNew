@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsapIcon from "@/components/WhatsapIcon";
+import AuthContextProvider from "@/contexts/authContext";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,7 +29,8 @@ export default function RootLayout({ children }) {
         <main className="font-global">
           <Header />
           <div className="w-full flex flex-col min-h-screen mt-28">
-            {children}
+            {/* {children} */}
+            <AuthContextProvider>{children}</AuthContextProvider>
           </div>
           <Footer />
          <WhatsapIcon/>

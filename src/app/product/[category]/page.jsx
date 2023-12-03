@@ -9,7 +9,7 @@ const Product = ({ params }) => {
   const numberFormat = (number) => {
     return Intl.NumberFormat().format(number);
   };
-  
+
   return (
     <>
       <div className="container mx-auto min-h-screen bg-white text-gray-900 py-1 p-4 sm:p-10 flex justify-center justify-items-center items-center">
@@ -50,18 +50,22 @@ const Product = ({ params }) => {
                 products[0].map((item, key) => (
                   <div
                     key={key}
-                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg"
+                    className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg flex flex-col justify-between"
                   >
-                    <img
-                      src={item.imagePath[0]}
-                      alt={item.name}
-                      className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
-                    />
-                    <h2 className="text-sm font-semibold">{item.title}</h2>
-                    <p className="text-gray-900 font-semibold mb-2">
-                      $ {numberFormat(item.precio)}
-                    </p>
-                    <DetailsProduct  product={item}  params={params}/>
+                    <div>
+                      <img
+                        src={item.imagePath[0]}
+                        alt={item.name}
+                        className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
+                      />
+                      <h2 className="text-sm font-semibold">{item.title}</h2>
+                      <p className="text-gray-900 font-semibold mb-2">
+                        $ {numberFormat(item.precio)}
+                      </p>
+                    </div>
+                    <div>
+                      <DetailsProduct product={item} params={params} />
+                    </div>
                   </div>
                 ))}
             </div>

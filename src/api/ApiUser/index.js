@@ -17,7 +17,7 @@ const saveUser = async (user) => {
     });
 };
 
-const login = async (user) => {
+const loginApi = async (user) => {
   const options = {
     method: "POST",
     headers: {
@@ -32,4 +32,4 @@ const login = async (user) => {
   ).then((res) => res.json());
 };
 
-export { saveUser, login };
+export { saveUser, loginApi };

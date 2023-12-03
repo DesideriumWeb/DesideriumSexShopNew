@@ -43,9 +43,9 @@ export const TITLE_MENU_NAVBAR = [
   { name: "CONTACTO", link: "/contact-form" },
 ];
 export const MENU_LENCERIA = [
-  { name: "Disfraces Eróticos", link: "/disfracesEroticos" },
-  { name: "Lencería para ella", link: "/lenceriaParaElla" },
-  { name: "Pesoneras", link: "/pesoneras" },
+  { name: "Disfraces Eróticos", link: "/lenceria" },
+  { name: "Lencería para ella", link: "/lenceria" },
+  { name: "Pesoneras", link: "/lenceria" },
 ];
 export const MENU_PIJAMAS = [
   { name: "Pijamas piel de durazno", link: "/pijamasPielDeDurazno" },
@@ -71,7 +71,7 @@ export const MENU_LUBRICANTES_COSMETICA = [
 export const MENU_JUGUETES = [
   {
     name: "Dildos",
-    link: "/dildos",
+    link: "/dildo",
     submenu: [
       { name: "Realistas", link: "/realistas" },
       { name: "Vidrio", link: "/vidrio" },
@@ -80,7 +80,7 @@ export const MENU_JUGUETES = [
   },
   {
     name: "Vibradores",
-    link: "/vibradores",
+    link: "/vibrador",
     submenu: [
       { name: "Anillos para pene", link: "/anillosParaPene" },
       { name: "Balas y huevos", link: "/balasYHuevos" },

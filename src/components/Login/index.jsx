@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { login } from "@/api/ApiUser";
+import { loginApi } from "@/api/ApiUser";
 import { toast, Toaster } from "react-hot-toast";
 import { guardarToken } from "@/utils/token";
+import { useAuthContext } from "@/contexts/authContext";
 //import "./Modal.css"; // Asegúrate de tener un archivo CSS para los estilos del modal
 
 const Login = () => {
@@ -11,6 +12,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const { login } = useAuthContext();
+
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -25,14 +28,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData)
+    loginApi(formData)
       .then((result) => {
         if (result.error) {
           console.log("ingresa 1");
           toast.error(`Mensaje : ${result.error} `);
         } else {
           console.log("ingresa 2");
-          guardarToken(result);
+          login(result);
           toast.success(`Mensaje : ${result.data}`);
         }
       })

@@ -31,7 +31,7 @@ const ItemDropDwonHeader = ({ title, option }) => {
       <div className="absolute opacity-0 invisible space-y-2 bg-white border rounded shadow-lg origin-top pt-2 z-50 group-hover:opacity-100 group-hover:visible font-serif">
         {option?.map((item, key) => (
           <div key={key}>
-            <a href={item.link}>
+            <a href={`/product/${item.link}`}>
               <div className="block px-4 w-[200px] text-black hover:text-[#9806A9] transition-all duration-500 ease-in">
                 {item.name} &nbsp;&nbsp;
                 {item.submenu && (

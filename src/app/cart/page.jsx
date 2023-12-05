@@ -1,4 +1,5 @@
 "use client";
+import WhatsapIcon from "@/components/WhatsapIcon";
 import React, { useEffect, useState } from "react";
 import ReactImageGallery from "react-image-gallery";
 
@@ -84,7 +85,7 @@ const CartPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#D50CD5] text-center">
+        <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#D50CD5] text-center font-serif">
           Carrito de Compras
         </h1>
         {cartItems.map((item) => (

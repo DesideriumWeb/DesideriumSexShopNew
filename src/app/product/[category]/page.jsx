@@ -10,6 +10,20 @@ const Product = ({ params }) => {
     return Intl.NumberFormat().format(number);
   };
 
+  const getRandomProducts = () => {
+    if (!products || !products[0]) {
+      return [];
+    }
+
+    // Clonar el array de productos para evitar mutaciones
+    const clonedProducts = [...products[0]];
+
+    // Ordenar aleatoriamente los productos
+    return clonedProducts.sort(() => Math.random() - 0.5);
+  };
+
+  const randomProducts = getRandomProducts();
+
   return (
     <>
       <div className="container mx-auto min-h-screen bg-white text-gray-900 py-1 p-4 sm:p-10 flex justify-center justify-items-center items-center">
@@ -42,12 +56,12 @@ const Product = ({ params }) => {
           </div>
         ) : (
           <div className="container mx-auto">
-            <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-[#9806A9]">
+            <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-[#9806A9] font-serif">
               Nuestros Productos
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {products &&
-                products[0].map((item, key) => (
+              {randomProducts &&
+                randomProducts.map((item, key) => (
                   <div
                     key={key}
                     className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg flex flex-col justify-between"
@@ -58,7 +72,7 @@ const Product = ({ params }) => {
                         alt={item.name}
                         className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
                       />
-                      <h2 className="text-sm font-semibold">{item.title}</h2>
+                      <h2 className="text-sm font-semibold font-serif">{item.title}</h2>
                       <p className="text-gray-900 font-semibold mb-2">
                         $ {numberFormat(item.precio)}
                       </p>

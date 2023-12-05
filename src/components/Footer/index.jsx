@@ -14,7 +14,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">
               Navegación
             </h3>
-            <ul className="text-gray-400">
+            <ul className="text-gray-400 font-serif">
               <li className="mb-2">
                 <a href="/">Home</a>
               </li>
@@ -29,7 +29,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center">
+          <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center font-serif">
             <h3 className="text-xl font-semibold mb-4 text-[#D50CD5]">
               Contacto
             </h3>
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-800 py-2 text-center">
+        <div className="bg-gray-800 py-2 text-center font-serif">
           <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Desiderium Sex Shop. Todos los
             derechos reservados.

@@ -6,6 +6,19 @@ import useGetProduct from "@/hooks/UseGetProduct/useGetProduct";
 const DetailsHome = () => {
   const [openModal, setOpenModal] = useState(false);
   const { data: products, loading, error } = useGetProduct();
+
+  const getRandomProducts = () => {
+    if (!products) {
+      return [];
+    }
+    // Clonar el array de productos para evitar mutaciones
+    const clonedProducts = [...products];
+
+    // Ordenar aleatoriamente los productos
+    return clonedProducts.sort(() => Math.random() - 0.5);
+  };
+
+  const randomProducts = getRandomProducts();
   return (
     <>
       <div className="bg-white text-[#9806A9] py-12 -mt-11 sm:mt-2 md:mt-2 lg:mt-2">
@@ -61,8 +74,8 @@ const DetailsHome = () => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 m-4">
-                {products &&
-                  products.map((item, key) => (
+                {randomProducts &&
+                  randomProducts.map((item, key) => (
                     <div
                       key={key}
                       className="bg-black p-4 rounded animate-fade-in-up-delay transform hover:scale-105 transition-transform duration-300"

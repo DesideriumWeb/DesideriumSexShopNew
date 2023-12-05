@@ -20,7 +20,6 @@ const HeaderProduct = () => {
         option={MENU_LUBRICANTES_COSMETICA}
       />
       <ItemDropDwonHeader title={"Juguetes"} option={MENU_JUGUETES} />
-      <ItemDropDwonHeader title={"Otros"} option={MENU_LENCERIA} />
     </>
   );
 };

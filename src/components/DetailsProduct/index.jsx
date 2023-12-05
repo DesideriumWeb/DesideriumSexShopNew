@@ -48,7 +48,7 @@ const DetailsProduct = ({ product, params }) => {
   return (
     <>
       <div>
-        <button onClick={toggleModal} className="modal-toggle">
+        <button onClick={toggleModal} className="modal-toggle font-serif">
           Ver mas
         </button>
 
@@ -80,14 +80,14 @@ const DetailsProduct = ({ product, params }) => {
               </button>
               <div className="mx-2 my-1 lg:mx-8">
                 <div className="container mx-auto">
-                  <h1 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-4 lg:mb-6 text-[#D50CD5] text-center">
+                  {/* <h1 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-4 lg:mb-6 text-[#D50CD5] text-center font-serif">
                     Detalle de producto
-                  </h1>
+                  </h1> */}
                   <div
                     key={product.id}
                     className="bg-white p-1 sm:p-1 lg:p-1 flex flex-col sm:flex-row  md:flex-row lg:flex-row"
                   >
-                    <div className=" sm:max-w-[130px]  md:max-w-[130px] lg:max-w-[130px]  sm:max-h-[130px]  md:max-h-[130px] lg:max-h-[130px]">
+                    <div className=" sm:max-w-[150px]  md:max-w-[150px] lg:max-w-[150px]  sm:max-h-[150px]  md:max-h-[150px] lg:max-h-[150px]">
                       <ReactImageGallery
                         items={product.imagePath.map((imageURL) => ({
                           original: imageURL,
@@ -97,7 +97,7 @@ const DetailsProduct = ({ product, params }) => {
                       />
                     </div>
                     <div className="flex-grow font-semibold">
-                      <h2 className="text-sm font-serif">{product.name}</h2>
+                      <h2 className="font-serif">{product.name}</h2>
                       <div className="mt-4 font-sans justify-start">
                         <p className="text-black ">Descripción: </p>
                         <span className="text-gray-500 font-normal">

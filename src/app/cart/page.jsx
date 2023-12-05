@@ -81,6 +81,24 @@ const CartPage = () => {
   const handleTallaPantyChange = (talla) => {
     setSelectedTallaPanty(talla);
   };
+ 
+
+const handleBuyButtonClick = () => {
+  // Crear el mensaje con la información del carrito
+  const mensaje = cartItems.map(item => {
+    const imagenUrls = item.imagePath.join('\n'); 
+    return `${imagenUrls} ¡Hola! Estoy interesado en comprar el producto  ${item.name} - Con el precio: $${(item.precio).toLocaleString()}`;
+  }).join('\n\n');
+
+  // Número de teléfono de WhatsApp (puedes cambiarlo según tu necesidad)
+  const numeroWhatsApp = '57-3005693097';
+
+  // Construir el enlace de WhatsApp
+  const enlaceWhatsApp = `https://api.whatsapp.com/send/?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+
+  // Abrir la ventana de WhatsApp en una nueva pestaña o aplicación
+  window.open(enlaceWhatsApp, '_blank');
+};
 
   return (
     <div className="bg-gray-100 min-h-screen py-12">
@@ -213,7 +231,8 @@ const CartPage = () => {
           <p className="text-xl font-semibold text-center text-[#D50CD5]">
             Total: ${calculateTotal().toLocaleString()}
           </p>
-          <button className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-4 block mx-auto hover:bg-[#9806A9] transition-colors duration-300">
+          <button className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-4 block mx-auto hover:bg-[#9806A9] transition-colors duration-300"
+          onClick={handleBuyButtonClick}>
             Comprar
           </button>
         </div>

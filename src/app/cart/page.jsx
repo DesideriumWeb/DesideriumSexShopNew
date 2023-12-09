@@ -1,5 +1,4 @@
 "use client";
-import WhatsapIcon from "@/components/WhatsapIcon";
 import React, { useEffect, useState } from "react";
 import ReactImageGallery from "react-image-gallery";
 
@@ -214,13 +213,13 @@ const handleBuyButtonClick = () => {
             <div>
               <button
                 onClick={() => removeItem(item.id)}
-                className="bg-[#D50CD5]  text-white py-2 px-4 rounded mt-1 ml-2 block mx-auto hover:bg-[#9806A9] transition-colors duration-300 md:hidden"
+                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 font-serif md:hidden"
               >
                 Eliminar
               </button>
               <button
                 onClick={() => removeItem(item.id)}
-                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-2 px-4 rounded mt-1 ml-2 hidden md:block"
+                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1  font-serif hidden md:block"
               >
                 Eliminar
               </button>
@@ -231,8 +230,9 @@ const handleBuyButtonClick = () => {
           <p className="text-xl font-semibold text-center text-[#D50CD5]">
             Total: ${calculateTotal().toLocaleString()}
           </p>
-          <button className="bg-[#D50CD5] text-white py-2 px-4 rounded mt-4 block mx-auto hover:bg-[#9806A9] transition-colors duration-300"
-          onClick={handleBuyButtonClick}>
+          <button className={`${cartItems.length > 0  ? "" :"'opacity-100 cursor-not-allowed'" }  bg-[#D50CD5] block text-white py-1 px-2 rounded mt-4  mx-auto hover:bg-[#9806A9] transition-colors duration-300 font-serif`}
+          onClick={handleBuyButtonClick}
+          disabled={cartItems.length === 0}>
             Comprar
           </button>
         </div>

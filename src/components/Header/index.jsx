@@ -92,7 +92,7 @@ const Header = () => {
               </li>
             ))}
             <Link onClick={() => setOpen(!open)} href="/cart">
-              <div className="text-3xl relative mt-1 sm:ml-6 sm:mt-6 md:ml-6 md:mt-6 lg:ml-6 lg:mt-6 ">
+              <div className={`text-3xl relative mb-4 sm:mb-0 md:mb-0 lg:mb-0 sm:ml-6 sm:mt-1 md:ml-6 md:mt-1 lg:ml-6 lg:mt-1 ${numPedidos > 0 ? "sm:mt-6 md:mt-6 lg:mt-6":""} `}>
                 {showIcon && (
                   <FontAwesomeIcon
                     icon={faShoppingCart}

@@ -20,8 +20,8 @@ const CatalogCard = () => {
   };
 
   return (
-    <div className="container mx-auto sm:mt-16 md:mt-16 lg:mt-16">
-      <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-[#9806A9] font-serif"></h1>
+    <div className="container mx-auto sm:mt-16 md:mt-16 lg:mt-16 p-6 bg-white">
+      <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-[#9806A9] font-serif bg-white"></h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {CATALOGOS &&
           CATALOGOS.map((item, key) => (

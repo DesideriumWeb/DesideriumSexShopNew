@@ -17,7 +17,7 @@ export const STRINGS = {
   FIELD_DATE_BORN_FORM_REGISTER: "Fecha de nacimiento",
   FIELD_PASSWORD_FORM_REGISTER: "Contraseña",
   FIELD_CONFIRM_PASSWORD_FORM_REGISTER: "Confirmar contraseña",
-  HISTORY : `Desiderium Sex Shop es una empresa ubicada en la ciudad de Armenia,
+  HISTORY: `Desiderium Sex Shop es una empresa ubicada en la ciudad de Armenia,
   Quindío, que se especializa en ofrecer productos y servicios
   relacionados con la sexualidad y el erotismo. Con una amplia variedad de
   artículos, Desiderium Sex Shop se esfuerza por proporcionar a sus
@@ -34,13 +34,19 @@ export const STRINGS = {
   priorizando la calidad, la seguridad y la satisfacción del cliente.
   Además, se enorgullece de mantener una atmósfera acogedora y respetuosa,
   donde los clientes pueden sentirse cómodos y seguros al explorar su
-  sexualidad.`
+  sexualidad.`,
 };
+export const CATALOGOS = [
+  { name: "Juguetes", imagePath: "https://res.cloudinary.com/dydd1uh4n/image/upload/v1688925635/DESIDERIUM/Vibradores/VIBRADOR_RABBIT.jpg", link: "/public/catalogo/CATÁLOGO_JUGUETES_SEXUALES_DICIEM_2023_2024.pdf" },
+  { name: "Lenceria", imagePath: "https://res.cloudinary.com/dydd1uh4n/image/upload/v1689290050/DESIDERIUM/Lenceria/1684271650908_hlviwf.jpg", link: "/public/catalogo/CATALOGO_LENCERIA_2023_DESIDERIUM_SEX_SHOP.pdf" },
+  { name: "Lubricantes", imagePath: "https://res.cloudinary.com/dydd1uh4n/image/upload/v1701790640/DESIDERIUM/Lubricantes/ubricanteIntimoAnalCorpoLub_2.jpg", link: "/public/catalogo/Catalogo_Digital_Lubricantes_DICIEM_2023_2024_.pdf" },
+];
 export const TITLE_MENU_NAVBAR = [
   { name: "HOME", link: "/" },
   { name: "PRODUCTOS", link: "/product" },
   { name: "ACERCA DE", link: "/about" },
   { name: "CONTACTO", link: "/contact-form" },
+  { name: "CATALOGOS", link: "/catalog" },
 ];
 export const MENU_LENCERIA = [
   { name: "Disfraces Eróticos", link: "/lenceria" },
@@ -197,4 +203,3 @@ export const MENU_MODAL = [
     products: [],
   },
 ];
-

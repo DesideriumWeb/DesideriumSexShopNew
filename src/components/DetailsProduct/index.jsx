@@ -37,6 +37,9 @@ const DetailsProduct = ({ product, params }) => {
     currentCart.push(producto);
     localStorage.setItem("cart", JSON.stringify(currentCart));
   };
+  const numberFormat = (number) => {
+    return Intl.NumberFormat().format(number);
+  };
 
   useEffect(() => {
     // Crear un carrito vacío en el localStorage si no existe
@@ -107,7 +110,7 @@ const DetailsProduct = ({ product, params }) => {
                       <div className="font-sans mt-4">
                         <p className="text-black">Precio:</p>
                         <span className="text-gray-500 font-normal">
-                          ${product.precio.toLocaleString()} Und
+                          ${numberFormat(product.precio.toLocaleString())} Und
                         </span>
                       </div>
                       <div className="w-full flex justify-center justify-items-center">

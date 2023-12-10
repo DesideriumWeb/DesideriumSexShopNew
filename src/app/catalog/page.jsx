@@ -1,22 +1,27 @@
 "use client";
-import React from "react"
+import React, { useState } from "react";
 import { CATALOGOS } from "../../config/config";
 
 const CatalogCard = () => {
+  const [loading, setLoading] = useState(null);
+
   const handleDownload = (item) => {
-    const catalogoUrl = `/catalogo/${item.link.substring(
-      item.link.lastIndexOf("/") + 1
-    )}`;
+    setLoading(item.link);
 
-    // Crear un enlace temporal para descargar el archivo
-    const link = document.createElement("a");
-    link.href = catalogoUrl;
-    link.target = "_blank"; // Abre el enlace en una nueva pestaña
-    link.download = `${item.link.substring(item.link.lastIndexOf("/") + 1)}`;
-    link.click();
+    // Simular una descarga con un temporizador
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = `/catalogo/${item.link.substring(
+        item.link.lastIndexOf("/") + 1
+      )}`;
+      link.target = "_blank";
+      link.download = `${item.link.substring(item.link.lastIndexOf("/") + 1)}`;
+      link.click();
 
-    // Limpiar el enlace después de la descarga
-    link.remove();
+      link.remove();
+
+      setLoading(null);
+    }, 2000);
   };
 
   return (
@@ -27,20 +32,30 @@ const CatalogCard = () => {
           CATALOGOS.map((item, key) => (
             <div
               key={key}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg flex flex-col justify-between"
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-[#9806A9] hover:border-opacity-0 transition-shadow duration-300 text-xs sm:text-lg flex flex-col justify-between relative"
             >
               <div>
-                <h2 className="text-sm font-semibold ">{item.name}</h2>
+                <h2 className="text-sm font-semibold text-black ">
+                  {item.name}
+                </h2>
                 <img
                   src={item.imagePath}
                   alt={item.name}
                   className="mx-auto h-48 w-48 sm:h-72 sm:w-72 mb-2 object-cover"
                 />
               </div>
-              <div onClick={() => handleDownload(item)}>
-                <button className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif">
+              <div>
+                <button
+                  onClick={() => handleDownload(item)}
+                  className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
+                >
                   Descargar Catálogo
                 </button>
+                {loading === item.link && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div key={item.link} className="spinner"></div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -50,3 +65,4 @@ const CatalogCard = () => {
 };
 
 export default CatalogCard;
+

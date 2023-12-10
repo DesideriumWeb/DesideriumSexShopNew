@@ -39,7 +39,6 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/public/icon/favicon-16x16.png"
         />
-        <link rel="manifest" href="/public/icon/site.webmanifest" />
         <link rel="mask-icon" href="/public/icon/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />

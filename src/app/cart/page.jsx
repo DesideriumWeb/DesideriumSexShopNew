@@ -13,6 +13,9 @@ const CartPage = () => {
     const cart_ = JSON.parse(cart)
     return cart ? [...cart_].reverse() : [];
   };
+  const numberFormat = (number) => {
+    return Intl.NumberFormat().format(number);
+  };
 
   useEffect(() => {
     // Cargar el carrito almacenado en el localStorage cuando el componente se monta
@@ -130,7 +133,7 @@ const handleBuyButtonClick = () => {
               <div className="font-sans mt-4">
                 <p className="text-black">Precio:</p>
                 <span className="text-gray-500 font-normal">
-                  ${item.precio.toLocaleString()} Und
+                  ${numberFormat(item.precio)} Und
                 </span>
               </div>
               {item.categoria === "lenceria" ? (
@@ -206,7 +209,7 @@ const handleBuyButtonClick = () => {
                 <h5 className="font-sans text-black">Total por producto :</h5>
                 <h5 className="text-black font-semibold text-2xl mt-4">
                   {" "}
-                  $ {(item.precio * item.cantidad).toLocaleString()}
+                  $ {numberFormat(item.precio * item.cantidad)}
                 </h5>
               </div>
             </div>

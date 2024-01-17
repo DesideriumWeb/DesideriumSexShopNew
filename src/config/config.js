@@ -168,6 +168,13 @@ export const MENU_MODAL = [
     ],
   },
   {
+    name: "Masturbadores",
+    link: "/masturbador",
+    products: [
+      { name: "Masturbadores", link: "/masturbador" },
+    ],
+  },
+  {
     name: "Succionadores de clitoris",
     link: "/succionadoresDeClitoris",
     products: [],

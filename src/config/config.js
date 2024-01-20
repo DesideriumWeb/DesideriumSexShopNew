@@ -175,6 +175,13 @@ export const MENU_MODAL = [
     ],
   },
   {
+    name: "Plug Anal",
+    link: "/plugAnal",
+    products: [
+      { name: "Plug Anal", link: "/plugAnal" },
+    ],
+  },
+  {
     name: "Succionadores de clitoris",
     link: "/succionadoresDeClitoris",
     products: [],

@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <>
       <div className="shadow-md w-full fixed top-0 left-0 z-20">
-        <div className="md:flex items-center justify-between bg-black text-white py-2 sm:py-0 md:py-0 lg:py-0 md:px-10 px-7">
+        <div className="md:flex items-center justify-between background-header text-header py-2 sm:py-5 md:py-5 lg:py-5 md:px-10 px-7">
           <div
             className="font-bold text-2xl cursor-pointer flex flex-col items-center font-[Poppins] 
             "
@@ -92,18 +92,19 @@ const Header = () => {
               </li>
             ))}
             <Link onClick={() => setOpen(!open)} href="/cart">
-              <div className={`text-3xl relative mb-4 sm:mb-0 md:mb-0 lg:mb-0 sm:ml-6 sm:mt-1 md:ml-6 md:mt-1 lg:ml-6 lg:mt-1 ${numPedidos > 0 ? "sm:mt-6 md:mt-6 lg:mt-6":""} `}>
+              <div className={`text-3xl relative mb-4 sm:mb-0 md:mb-0 lg:mb-0 sm:ml-6 sm:mt-1 md:ml-6 md:mt-1 lg:ml-6 lg:mt-1  `}>
+              {numPedidos > 0 && (
+                  <span className="absolute right-[299px] md:-right-1 lg:-right-1 color-number-carrito text-white rounded-full w-6 h-6 flex items-center justify-center text-sm transform translate-y-[-50%] translate-x-1/2 transition-all duration-300">
+                    {numPedidos}
+                  </span>
+                )}
                 {showIcon && (
                   <FontAwesomeIcon
                     icon={faShoppingCart}
                     className="text-white hover:text-gray-400 cursor-pointer"
                   />
                 )}
-                {numPedidos > 0 && (
-                  <span className="relative -top-8 -right-3 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm transform translate-y-[-50%] translate-x-1/2 transition-all duration-300">
-                    {numPedidos}
-                  </span>
-                )}
+                
               </div>
             </Link>
             {/* <Link
@@ -120,7 +121,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <div className="pt-0 sm:pt-20  md:pt-20  lg:pt-20 bg-white shadow-md w-full fixed top-0 left-0 z-10">
+      <div className="pt-0 sm:pt-24  md:pt-24  lg:pt-24 bg-white shadow-md w-full fixed top-0 left-0 z-10">
         <div className="hidden sm:flex  md:flex lg:flex justify-center items-center">
           <HeaderProducts />
         </div>

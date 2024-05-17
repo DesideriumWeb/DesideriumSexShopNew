@@ -48,8 +48,8 @@ const Login = () => {
   return (
     <>
       <div>
-        <button onClick={toggleModal} className="modal-toggle">
-          Login
+        <button onClick={toggleModal} className="button">
+          Login 
         </button>
 
         {showModal && (

@@ -51,7 +51,7 @@ const DetailsProduct = ({ product, params }) => {
   return (
     <>
       <div>
-        <button onClick={toggleModal} className="modal-toggle font-serif">
+        <button onClick={toggleModal} className="button font-serif">
           Ver mas
         </button>
 
@@ -118,7 +118,7 @@ const DetailsProduct = ({ product, params }) => {
                           <a
                             href="/cart"
                             onClick={() => addToCart(product)}
-                            className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
+                            className="button transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
                           >
                             Añadir a carrito
                           </a>

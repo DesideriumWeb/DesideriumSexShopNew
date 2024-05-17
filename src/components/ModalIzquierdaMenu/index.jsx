@@ -33,22 +33,12 @@ const ModalIzquierdaMenu = ({ openModalVar, setOpenModal }) => {
         }`}
         onClick={closeModal}
       />
-      {/* Contenido del modal */}
-      {/* <div
-        className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-lg transform transition-transform  duration-500  ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      > */}
-      {/* <div
-        className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-md text-red-700  transform transition-transform duration-500 ${
+
+      <div
+        className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-md hover:shadow-xl hover:shadow-[#9806A9] hover:border-opacity-0 shadow-custom-menu-izquierda transform transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } rounded-tr-lg rounded-bl-lg rounded-br-lg`}
-      > */}
-      <div
-  className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-md hover:shadow-xl hover:shadow-[#9806A9] hover:border-opacity-0 shadow-custom-menu-izquierda transform transition-transform duration-500 ${
-    isOpen ? "translate-x-0" : "-translate-x-full"
-  } rounded-tr-lg rounded-bl-lg rounded-br-lg`}
->
+      >
         {/* Botón de cierre en la parte superior derecha */}
         <button
           className="absolute top-2 right-2   text-gray-800  hover:text-xl font-semibold py-2 px-3 rounded-full"

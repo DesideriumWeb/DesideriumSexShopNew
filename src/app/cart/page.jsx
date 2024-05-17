@@ -105,7 +105,7 @@ const handleBuyButtonClick = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#D50CD5] text-center font-serif">
+        <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-titulo-carrito text-center font-serif">
           Carrito de Compras
         </h1>
         {cartItems.map((item) => (
@@ -216,13 +216,13 @@ const handleBuyButtonClick = () => {
             <div>
               <button
                 onClick={() => removeItem(item.id)}
-                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 font-serif md:hidden"
+                className="button transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 font-serif md:hidden"
               >
                 Eliminar
               </button>
               <button
                 onClick={() => removeItem(item.id)}
-                className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1  font-serif hidden md:block"
+                className="button transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1  font-serif hidden md:block"
               >
                 Eliminar
               </button>
@@ -230,10 +230,10 @@ const handleBuyButtonClick = () => {
           </div>
         ))}
         <div className="border-t pt-4">
-          <p className="text-xl font-semibold text-center text-[#D50CD5]">
+          <p className="text-xl font-semibold text-center text-titulo-carrito">
             Total: ${calculateTotal().toLocaleString()}
           </p>
-          <button className={`${cartItems.length > 0  ? "" :"'opacity-100 cursor-not-allowed'" }  bg-[#D50CD5] block text-white py-1 px-2 rounded mt-4  mx-auto hover:bg-[#9806A9] transition-colors duration-300 font-serif`}
+          <button className={`${cartItems.length > 0  ? "" :"'opacity-100 cursor-not-allowed'" }  button block  text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 mx-auto transition-colors duration-300 font-serif`}
           onClick={handleBuyButtonClick}
           disabled={cartItems.length === 0}>
             Comprar

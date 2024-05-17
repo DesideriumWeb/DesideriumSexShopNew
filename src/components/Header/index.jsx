@@ -11,7 +11,7 @@ import Link from "next/link";
 import HeaderProducts from "../HeaderProducts/HeaderProduct";
 import ModalIzquierdaMenu from "../ModalIzquierdaMenu";
 import Login from "../Login";
-
+import Banner from "../Banner";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -25,7 +25,6 @@ const Header = () => {
       setNumeroPedidos(nummeroPedidos);
     }
   }, []);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -92,8 +91,10 @@ const Header = () => {
               </li>
             ))}
             <Link onClick={() => setOpen(!open)} href="/cart">
-              <div className={`text-3xl relative mb-4 sm:mb-0 md:mb-0 lg:mb-0 sm:ml-6 sm:mt-1 md:ml-6 md:mt-1 lg:ml-6 lg:mt-1  `}>
-              {numPedidos > 0 && (
+              <div
+                className={`text-3xl relative mb-4 sm:mb-0 md:mb-0 lg:mb-0 sm:ml-6 sm:mt-1 md:ml-6 md:mt-1 lg:ml-6 lg:mt-1  `}
+              >
+                {numPedidos > 0 && (
                   <span className="absolute right-[299px] md:-right-1 lg:-right-1 color-number-carrito text-white rounded-full w-6 h-6 flex items-center justify-center text-sm transform translate-y-[-50%] translate-x-1/2 transition-all duration-300">
                     {numPedidos}
                   </span>
@@ -104,7 +105,6 @@ const Header = () => {
                     className="text-white hover:text-gray-400 cursor-pointer"
                   />
                 )}
-                
               </div>
             </Link>
             {/* <Link
@@ -122,10 +122,14 @@ const Header = () => {
         </div>
       </div>
       <div className="pt-0 sm:pt-24  md:pt-24  lg:pt-24 bg-white shadow-md w-full fixed top-0 left-0 z-10">
+        {/* <div>
+          <Banner />
+        </div> */}
         <div className="hidden sm:flex  md:flex lg:flex justify-center items-center">
           <HeaderProducts />
         </div>
       </div>
+
       <ModalIzquierdaMenu
         openModalVar={openModal}
         setOpenModal={setOpenModal}

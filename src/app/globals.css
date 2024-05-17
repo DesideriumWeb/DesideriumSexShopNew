@@ -189,6 +189,9 @@ body {
 .text-header{
   color:var(--color-text-header);
 }
+.text-titulo-carrito{
+  color : var(--secondary-color);
+}
 
 .shadow-custom-menu-izquierda:hover {
 
@@ -199,4 +202,30 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.bannerMessages {
+  display: flex;
+  width: 100%;
+}
+
+.bannerMessage {
+  margin-right: 10px; /* Espacio entre los mensajes */
+}
+.bannerContainer {
+  position: relative;
+  overflow: hidden;
+}
+.active {
+  /* Estilos para cuando el mensaje está activo */
+  font-weight: bold;
+  /* Agrega cualquier otro estilo que desees */
 }

@@ -47,7 +47,7 @@ const CatalogCard = () => {
               <div>
                 <button
                   onClick={() => handleDownload(item)}
-                  className="bg-[#D50CD5] hover:bg-[#9806A9] transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
+                  className="button transition-colors duration-300 text-white py-1 px-2 sm:py-2 sm:px-4 rounded mt-1 md:block font-serif"
                 >
                   Descargar Catálogo
                 </button>

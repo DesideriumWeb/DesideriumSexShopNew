@@ -17,6 +17,12 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+
+  --primary-color: rgb(213, 13, 213);
+  --secondary-color: rgb(152, 6, 169);
+  --color-text : #ffff;
+  --background-header :#000;
+  --color-text-header :#ffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,13 +44,13 @@ body {
 }
 
 .custom-sombra-text {
-  color: rgb(213, 13, 213);
-  text-shadow: 2px 2px 5px rgb(152, 6, 169);
+  color: var(--primary-color);
+  text-shadow: 2px 2px 5px var(--secondary-color);
   transition: 2s;
 }
 .custom-sombra-text:hover {
-  text-shadow: 10px 10px 10px rgb(152, 6, 169);
-  color: rgb(255, 252, 255);
+  text-shadow: 10px 10px 10px var(--secondary-color);
+  color: var(--color-text);
   transition: 2s;
 }
 
@@ -84,17 +90,17 @@ body {
 /* Modal.css */
 
 /* Estilo para el botón que abre el modal */
-.modal-toggle {
-  background-color: rgb(213, 13, 213);
+.button {
+  background-color: var(--secondary-color);
   color: white;
   padding: 5px 10px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
 }
-.modal-toggle:hover{
+.button:hover{
   transition: 0.5s;
-  background-color: rgb(152, 6, 169);
+  background-color: var(--primary-color)
 }
 
 /* Estilos para el modal */
@@ -142,7 +148,7 @@ body {
 
 /* Estilos para el botón de inicio de sesión */
 .login-button {
-  background-color: rgb(213, 13, 213);
+  background-color: var(--primary-color);
   color: white;
   padding: 10px 20px;
   margin-top: 10px;
@@ -156,12 +162,32 @@ body {
 /* Agrega estos estilos a tu hoja de estilo (styles.css) */
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #D50CD5;
+  border-top: 4px solid var(--primary-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
   margin-left: 8px; /* Ajusta el margen según tus necesidades */
+}
+.background-header{
+  /* background: var(--background-header); */
+    background-color: initial;
+    /* background-image: linear-gradient(180deg, #000 0%, #2a0519 100%); */
+    background-image: linear-gradient(180deg,rgb(0, 0, 0) 70%,  rgb(152, 6, 169)  100%);
+
+}
+.background-header-mobile{
+  /* background: var(--background-header); */
+    background-color: initial;
+    /* background-image: linear-gradient(180deg, #000 0%, #2a0519 100%); */
+    background-image: linear-gradient(180deg,rgb(152, 6, 169) 80%,  rgb(0, 0, 0)  87%);
+
+}
+.color-number-carrito{
+  background: var(--primary-color);
+}
+.text-header{
+  color:var(--color-text-header);
 }
 
 @keyframes spin {

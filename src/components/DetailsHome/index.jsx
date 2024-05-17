@@ -26,12 +26,12 @@ const DetailsHome = () => {
           <h1 className="text-xl sm:text-xl md:text-1xl  lg:text-3xl font-semibold mb-6 animate-fade-in-up">
             ¡Bienvenido Desiderium nuestra Tienda Erótica!
           </h1>
-          <p className="text-lg mb-8 animate-fade-in-up-delay">
+          <p className="text-lg mb-8 animate-fade-in-up-delay font-serif text-black">
             Descubre una amplia selección de productos sensuales para añadir un
             toque de pasión a tu vida.
           </p>
           <button
-            className="bg-[#D50CD5] hover:bg-[#9806A9] text-white py-2 px-6 rounded text-md sm:text-lg md:text-xl  lg:text-3xl  font-semibold animate-bounce z-0"
+            className="button text-white py-2 px-6 rounded text-md sm:text-lg md:text-xl  lg:text-3xl  font-semibold animate-bounce z-0"
             onClick={() => setOpenModal(true)}
           >
             Explora Nuestros Productos

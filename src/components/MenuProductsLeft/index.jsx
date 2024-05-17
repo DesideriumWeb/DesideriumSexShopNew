@@ -16,8 +16,8 @@ const MenuProductsLeft = ({ setIsOpen }) => {
   };
 
   return (
-    <div className="h-screen grid place-items-start bg-gradient-to-r from-white to-white">
-      <div className="relative flex flex-col items-start w-[300px] rounded-lg max-h-[600px] overflow-y-auto overflow-x-hidden">
+    <div className="h-screen grid place-items-start bg-gradient-to-r from-white to-white ">
+      <div className="relative flex flex-col items-start w-[300px] rounded-lg max-h-[600px] overflow-y-auto overflow-x-hidden ">
         {MENU_MODAL.map((option, index) => (
           <div key={index}>
             <button

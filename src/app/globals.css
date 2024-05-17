@@ -190,6 +190,12 @@ body {
   color:var(--color-text-header);
 }
 
+.shadow-custom-menu-izquierda:hover {
+
+  transition: 1s;
+
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

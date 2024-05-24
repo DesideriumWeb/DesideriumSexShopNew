@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsapIcon from "@/components/WhatsapIcon";
 import AuthContextProvider from "@/contexts/authContext";
-import { GA_TRACKING_ID } from '../../public/gtag';
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] });

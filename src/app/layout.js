@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "tailwindcss/tailwind.css";
@@ -6,6 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsapIcon from "@/components/WhatsapIcon";
 import AuthContextProvider from "@/contexts/authContext";
+import { GA_TRACKING_ID } from '../../public/gtag';
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +21,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+         <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <Script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
         <link
           href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Tiro+Devanagari+Hindi&display=swap"
           rel="stylesheet"

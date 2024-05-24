@@ -147,7 +147,7 @@ const Login = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full text-white bg-[#D50CD5] hover:bg-[#9806A9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                    className="w-full text-white bg-[#9806A9]  hover:bg-[#D50CD5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                   >
                     Iniciar Session
                   </button>

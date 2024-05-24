@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsapIcon from "@/components/WhatsapIcon";
 import AuthContextProvider from "@/contexts/authContext";
-import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-         <Script
+         <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_REACT_APP_KEY_GOOGLE_ANALITYCS}`}
           />
-          <Script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
